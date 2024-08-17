@@ -1,10 +1,10 @@
 import React from 'react';
-import { FaUserCircle, FaSearch } from 'react-icons/fa';
+import { FaSearch } from 'react-icons/fa';
 import { Link as ScrollLink } from 'react-scroll';
 
 const Homepage: React.FC = () => {
     return (
-        <div className="flex items-center bg-gray-100 min-h-screen p-8 relative" style={{ height: '50vh' }}>
+        <div className="flex items-center bg-gray-100 p-8 relative" style={{ height: '95vh' }}>
             <div className="flex flex-col justify-start text-left ml-16 mb-20 w-1/2 p-8">
                 <h1 className="bg-clip-text text-transparent bg-gradient-to-r from-teal-600 to-cyan-900 font-bold text-6xl mb-8">
                     Welcome to Unisole
