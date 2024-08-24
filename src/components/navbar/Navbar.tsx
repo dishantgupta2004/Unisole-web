@@ -8,7 +8,7 @@ import '../../App.css';
 
 const Navbar: React.FC = () => {
     const navigate = useNavigate();
-    const [user, setUser] = useState(null);
+    const [user, setUser] = useState<any>(null);
     const [isPopupOpen, setIsPopupOpen] = useState(false);
 
     useEffect(() => {

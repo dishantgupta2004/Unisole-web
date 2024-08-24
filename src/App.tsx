@@ -6,8 +6,8 @@ import Shadowpage from './components/shadowpage/Shadowpage';
 import Homepage from './components/homepage/Homepage';
 import About from './components/about/About';
 import Announcement from './components/announcement/Announcement';
-// import UserProfile from './components/navbar/UserProfile';
-import Login from './components/login/Login'; // Import the Login component
+import UserProfile from './components/Userprofile/Userprofile';
+import Login from './components/login/Login';
 import './App.css';
 
 const App: React.FC = () => {
@@ -22,7 +22,6 @@ const App: React.FC = () => {
 
     document.addEventListener("mousemove", handleMouseMove);
 
-    // Cleanup event listener on component unmount
     return () => {
       document.removeEventListener("mousemove", handleMouseMove);
     };
@@ -56,8 +55,8 @@ const App: React.FC = () => {
           <Route path="/announcement" element={<Announcement />} />
           <Route path="/case-study" element={<div>Case Study Page</div>} />
           <Route path="/stories" element={<div>Stories Page</div>} />
-          <Route path="/login" element={<Login />} /> {/* Add Login route */}
-          {/* <Route path="/user-profile" element={<UserProfile />} /> */}
+          <Route path="/login" element={<Login />} /> {/* Login route */}
+          <Route path="/user-profile" element={<UserProfile />} /> {/* Add this route for UserProfile */}
         </Routes>
       </div>
     </Router>

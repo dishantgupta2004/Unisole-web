@@ -12,7 +12,7 @@ const Login: React.FC = () => {
         try {
             await signInWithPopup(auth, provider);
             alert('Login successful');
-            navigate('/user-profile');
+            navigate('/');
         } catch (error) {
             alert((error as Error).message);
         }
