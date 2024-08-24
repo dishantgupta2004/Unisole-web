@@ -5,8 +5,10 @@ import Navbar from './components/navbar/Navbar';
 import Shadowpage from './components/shadowpage/Shadowpage';
 import Homepage from './components/homepage/Homepage';
 import About from './components/about/About';
-import './App.css';
 import Announcement from './components/announcement/Announcement';
+// import UserProfile from './components/navbar/UserProfile';
+import Login from './components/login/Login'; // Import the Login component
+import './App.css';
 
 const App: React.FC = () => {
   useEffect(() => {
@@ -54,6 +56,8 @@ const App: React.FC = () => {
           <Route path="/announcement" element={<Announcement />} />
           <Route path="/case-study" element={<div>Case Study Page</div>} />
           <Route path="/stories" element={<div>Stories Page</div>} />
+          <Route path="/login" element={<Login />} /> {/* Add Login route */}
+          {/* <Route path="/user-profile" element={<UserProfile />} /> */}
         </Routes>
       </div>
     </Router>

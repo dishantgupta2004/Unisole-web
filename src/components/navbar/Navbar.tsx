@@ -1,13 +1,37 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FaUser } from 'react-icons/fa'; // Import user icon
+import { FaUser } from 'react-icons/fa';
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth } from '../../firebase';
+import UserProfilePopup from './UserProfilePopup';
 import '../../App.css';
 
 const Navbar: React.FC = () => {
     const navigate = useNavigate();
+    const [user, setUser] = useState(null);
+    const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+            setUser(currentUser);
+        });
+        return () => unsubscribe();
+    }, []);
 
     const handleMenuClick = () => {
         navigate('/shadowpage');
+    };
+
+    const handleLoginClick = () => {
+        navigate('/login');
+    };
+
+    const togglePopup = () => {
+        setIsPopupOpen(!isPopupOpen);
+    };
+
+    const closePopup = () => {
+        setIsPopupOpen(false);
     };
 
     return (
@@ -27,13 +51,32 @@ const Navbar: React.FC = () => {
                     <span className="text-4xl font-light text-gray-700">UNISOLE</span>
                 </div>
             </div>
-            {/* User Icon on the right side */}
-            <div className="mr-32">
-                <FaUser
-                    size={30}
-                    className="text-gray-700 cursor-pointer hover:text-gray-500 transition-colors duration-300"
-                    onClick={() => navigate('/user-profile')} // Redirect to user profile page on click
-                />
+            <div className="flex items-center mr-32 relative">
+                {user ? (
+                    <div className="flex items-center">
+                        {user.photoURL ? (
+                            <img
+                                src={user.photoURL}
+                                alt="User"
+                                className="w-8 h-8 rounded-full mr-2 cursor-pointer"
+                                onClick={togglePopup}
+                            />
+                        ) : (
+                            <FaUser
+                                className="w-12 h-12 text-gray-500 mr-2 cursor-pointer"
+                                onClick={togglePopup}
+                            />
+                        )}
+                        {isPopupOpen && <UserProfilePopup onClose={closePopup} />}
+                    </div>
+                ) : (
+                    <button
+                        className="ml-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+                        onClick={handleLoginClick}
+                    >
+                        Login
+                    </button>
+                )}
             </div>
         </nav>
     );
