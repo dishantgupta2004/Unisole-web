@@ -48,7 +48,7 @@ const Shadowpage: React.FC = () => {
                         transition={{ type: 'spring', stiffness: 300 }}
                     >
                         <span className="text-gray-500 text-sm mr-2">02</span>
-                        <Link to="/blog" className="text-white hover:text-gray-500 font-bold text-3xl transition-colors duration-300">Events</Link>
+                        <Link to="/event" className="text-white hover:text-gray-500 font-bold text-3xl transition-colors duration-300">Events</Link>
                     </motion.li>
                     <motion.li
                         className="mb-5 text-2xl"

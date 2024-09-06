@@ -8,7 +8,9 @@ import About from './components/about/About';
 import Announcement from './components/announcement/Announcement';
 import UserProfile from './components/Userprofile/Userprofile';
 import Login from './components/login/Login';
+import Event from './components/event/Event';
 import './App.css';
+import Course from './components/course/Course';
 
 const App: React.FC = () => {
   useEffect(() => {
@@ -47,12 +49,20 @@ const App: React.FC = () => {
                 <Element name="announcement">
                   <Announcement />
                 </Element>
+                <Element name="course">
+                  <Course />
+                </Element>
+                <Element name="event">
+                  <Event />
+                </Element>
               </div>
             }
           />
           <Route path="/shadowpage" element={<Shadowpage />} />
           <Route path="/about" element={<About />} />
           <Route path="/announcement" element={<Announcement />} />
+          <Route path="/event" element={<Event />} />
+          <Route path="/couse" element={<Course />} />
           <Route path="/case-study" element={<div>Case Study Page</div>} />
           <Route path="/stories" element={<div>Stories Page</div>} />
           <Route path="/login" element={<Login />} /> {/* Login route */}

@@ -47,7 +47,7 @@ const Navbar: React.FC = () => {
                     </div>
                 </div>
                 <div className="logo flex items-center ml-8">
-                    <img src="/physteo.jpeg" alt="Unisole Logo" className="w-12 h-12 mr-2 rounded-full" />
+                    <img src="/logo.png" alt="Unisole Logo" className="w-12 h-12 mr-2 rounded-full" />
                     <span className="text-4xl font-light text-gray-700">UNISOLE</span>
                 </div>
             </div>
