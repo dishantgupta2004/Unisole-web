@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Link as ScrollLink, Element } from 'react-scroll';
 import Navbar from './components/navbar/Navbar';
@@ -9,32 +9,15 @@ import Announcement from './components/announcement/Announcement';
 import UserProfile from './components/Userprofile/Userprofile';
 import Login from './components/login/Login';
 import Event from './components/event/Event';
+import Explore from './components/course/Explore';
 import './App.css';
 import Course from './components/course/Course';
 
 const App: React.FC = () => {
-  useEffect(() => {
-    const cursor = document.querySelector(".cursor") as HTMLElement;
-    const cursor2 = document.querySelector(".cursor2") as HTMLElement;
-
-    const handleMouseMove = (e: MouseEvent) => {
-      cursor.style.cssText = `left: ${e.clientX}px; top: ${e.clientY}px;`;
-      cursor2.style.cssText = `left: ${e.clientX}px; top: ${e.clientY}px;`;
-    };
-
-    document.addEventListener("mousemove", handleMouseMove);
-
-    return () => {
-      document.removeEventListener("mousemove", handleMouseMove);
-    };
-  }, []);
-
   return (
     <Router>
       <div className="min-h-screen flex flex-col">
         <Navbar />
-        <div className="cursor"></div>
-        <div className="cursor2"></div>
         <Routes>
           <Route
             path="/"
@@ -67,6 +50,7 @@ const App: React.FC = () => {
           <Route path="/stories" element={<div>Stories Page</div>} />
           <Route path="/login" element={<Login />} /> {/* Login route */}
           <Route path="/user-profile" element={<UserProfile />} /> {/* Add this route for UserProfile */}
+          <Route path="/explore" element={<Explore />} />
         </Routes>
       </div>
     </Router>
