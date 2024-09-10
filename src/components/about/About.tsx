@@ -46,12 +46,14 @@ const About: React.FC = () => {
                                 controls
                                 autoPlay
                                 loop
+                                muted
                                 className="rounded-lg"
                             >
                                 <source src="/about1.mp4" type="video/mp4" />
                                 Your browser does not support the video tag.
                             </video>
                         </div>
+
                     </div>
 
                     {/* Bottom Part Unchanged */}

@@ -47,14 +47,6 @@ const Shadowpage: React.FC = () => {
                         whileHover={{ x: 10 }} // Moves 10px to the right on hover
                         transition={{ type: 'spring', stiffness: 300 }}
                     >
-                        <span className="text-gray-500 text-sm mr-2">02</span>
-                        <Link to="/event" className="text-white hover:text-gray-500 font-bold text-3xl transition-colors duration-300">Events</Link>
-                    </motion.li>
-                    <motion.li
-                        className="mb-5 text-2xl"
-                        whileHover={{ x: 10 }} // Moves 10px to the right on hover
-                        transition={{ type: 'spring', stiffness: 300 }}
-                    >
                         <span className="text-gray-500 text-sm mr-2">03</span>
                         <Link to="/announcement" className="text-white hover:text-gray-500 font-bold text-3xl transition-colors duration-300">Announcements</Link>
                     </motion.li>
@@ -63,8 +55,24 @@ const Shadowpage: React.FC = () => {
                         whileHover={{ x: 10 }} // Moves 10px to the right on hover
                         transition={{ type: 'spring', stiffness: 300 }}
                     >
+                        <span className="text-gray-500 text-sm mr-2">03</span>
+                        <Link to="/project" className="text-white hover:text-gray-500 font-bold text-3xl transition-colors duration-300">Project</Link>
+                    </motion.li>
+                    <motion.li
+                        className="mb-5 text-2xl"
+                        whileHover={{ x: 10 }} // Moves 10px to the right on hover
+                        transition={{ type: 'spring', stiffness: 300 }}
+                    >
+                        <span className="text-gray-500 text-sm mr-2">02</span>
+                        <Link to="/event" className="text-white hover:text-gray-500 font-bold text-3xl transition-colors duration-300">Events</Link>
+                    </motion.li>
+                    <motion.li
+                        className="mb-5 text-2xl"
+                        whileHover={{ x: 10 }} // Moves 10px to the right on hover
+                        transition={{ type: 'spring', stiffness: 300 }}
+                    >
                         <span className="text-gray-500 text-sm mr-2">04</span>
-                        <Link to="/stories" className="text-white hover:text-gray-500 font-bold text-3xl transition-colors duration-300">Courses</Link>
+                        <Link to="/course" className="text-white hover:text-gray-500 font-bold text-3xl transition-colors duration-300">Courses</Link>
                     </motion.li>
                 </ul>
             </motion.div>

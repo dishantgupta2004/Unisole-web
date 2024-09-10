@@ -12,6 +12,8 @@ import Event from './components/event/Event';
 import Explore from './components/course/Explore';
 import './App.css';
 import Course from './components/course/Course';
+import Team from './components/team/Team';
+import Project from './components/project/Project';
 
 const App: React.FC = () => {
   return (
@@ -35,8 +37,14 @@ const App: React.FC = () => {
                 <Element name="course">
                   <Course />
                 </Element>
+                <Element name="project">
+                  <Project />
+                </Element>
                 <Element name="event">
                   <Event />
+                </Element>
+                <Element name="team">
+                  <Team />
                 </Element>
               </div>
             }
@@ -45,12 +53,12 @@ const App: React.FC = () => {
           <Route path="/about" element={<About />} />
           <Route path="/announcement" element={<Announcement />} />
           <Route path="/event" element={<Event />} />
-          <Route path="/couse" element={<Course />} />
-          <Route path="/case-study" element={<div>Case Study Page</div>} />
-          <Route path="/stories" element={<div>Stories Page</div>} />
+          <Route path="/course" element={<Course />} />
           <Route path="/login" element={<Login />} /> {/* Login route */}
           <Route path="/user-profile" element={<UserProfile />} /> {/* Add this route for UserProfile */}
           <Route path="/explore" element={<Explore />} />
+          <Route path="/team" element={<Team />} />
+          <Route path="/project" element={<Project />} />
         </Routes>
       </div>
     </Router>
