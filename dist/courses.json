@@ -1,0 +1,26 @@
+[
+    {
+        "title": "General Mathematics Course",
+        "description": "In collaboration with the National Institute of Technology Hamirpur. Covers basic arithmetic, algebra, geometry, and statistics, and prepares you for exams like CSAT, Army, Police, and Railways.",
+        "details": [
+            "In collaboration with NIT Hamirpur",
+            "CSAT, Army, Police, and Railways",
+            "Basic arithmetic to advanced topics"
+        ],
+        "price": "₹599",
+        "oldPrice": "₹599",
+        "image": "/maths.png"
+    },
+    {
+        "title": "Advanced AI Course",
+        "description": "Learn AI in collaboration with NIT Hamirpur. Explore Machine Learning, Deep Learning, and AI model deployment using Python, TensorFlow, and PyTorch. Solve real-world problems, especially in agriculture.",
+        "details": [
+            "In collaboration with NIT Hamirpur",
+            "Machine Learning, Deep Learning, and AI applications",
+            "AI model deployment for real-world problems"
+        ],
+        "price": "₹999",
+        "oldPrice": "₹999",
+        "image": "/ai.png"
+    }
+]

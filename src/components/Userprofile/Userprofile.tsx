@@ -2,12 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { onAuthStateChanged, User } from 'firebase/auth';
 import { auth } from '../../firebase';
 
-// Define types
-interface UserProfileProps {
-    user: User | null;
-}
-
-const UserProfile: React.FC<UserProfileProps> = () => {
+const UserProfile: React.FC = () => {
     const [user, setUser] = useState<User | null>(null);
     const [loading, setLoading] = useState<boolean>(true);
 
@@ -30,7 +25,7 @@ const UserProfile: React.FC<UserProfileProps> = () => {
                 <div className="bg-gray-200 p-6 rounded-lg shadow-lg max-w-md mx-auto">
                     <div className="flex items-center mb-6">
                         <img
-                            src={user.photoURL || '/default-avatar.jpg'} // Provide a default image if photoURL is not available
+                            src={user.photoURL || '/default-avatar.jpg'}
                             alt="User"
                             className="w-20 h-20 rounded-full mr-4"
                         />

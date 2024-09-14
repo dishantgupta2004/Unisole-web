@@ -1,0 +1,58 @@
+[
+    {
+        "id": 1,
+        "title": "New Course Launch",
+        "content": "We are excited to announce the launch of our new course on advanced React development. Enroll today and enhance your skills!",
+        "date": "August 17, 2024",
+        "url": "https://example.com/course-launch"
+    },
+    {
+        "id": 2,
+        "title": "Scholarship Opportunities",
+        "content": "Don't miss out on our scholarship opportunities for deserving students. Apply before the deadline.",
+        "date": "August 15, 2024",
+        "url": "https://example.com/scholarship"
+    },
+    {
+        "id": 3,
+        "title": "Internship Program",
+        "content": "Our new internship program is now open for applications. Gain practical experience while learning.",
+        "date": "August 10, 2024",
+        "url": "https://example.com/internship"
+    },
+    {
+        "id": 4,
+        "title": "Webinar on AI",
+        "content": "Join our webinar on AI and machine learning, where industry experts will share insights and trends.",
+        "date": "August 5, 2024",
+        "url": "https://example.com/webinar-ai"
+    },
+    {
+        "id": 5,
+        "title": "Hackathon Event",
+        "content": "Participate in our upcoming hackathon and showcase your coding skills. Great prizes to be won!",
+        "date": "August 1, 2024",
+        "url": "https://example.com/hackathon"
+    },
+    {
+        "id": 6,
+        "title": "Career Fair",
+        "content": "Attend our annual career fair and meet top companies looking for talent like you!",
+        "date": "July 28, 2024",
+        "url": "https://example.com/career-fair"
+    },
+    {
+        "id": 7,
+        "title": "Coding Bootcamp",
+        "content": "Join our intensive coding bootcamp to enhance your programming skills in just a few weeks.",
+        "date": "July 20, 2024",
+        "url": "https://example.com/coding-bootcamp"
+    },
+    {
+        "id": 8,
+        "title": "Tech Conference",
+        "content": "Our annual tech conference is just around the corner. Register now to secure your spot!",
+        "date": "July 15, 2024",
+        "url": "https://example.com/tech-conference"
+    }
+]
