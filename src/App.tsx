@@ -19,34 +19,36 @@ import Shadowpage from './components/shadowpage/Shadowpage';
 const App: React.FC = () => {
   return (
     <Router>
-      <div className="min-h-screen flex flex-col">
-        <Navbar />
-        <Routes>
-          <Route path="/" element={
-            <div>
-              <Homepage />
-              <About />
-              <Announcement />
-              <Course />
-              <Project />
-              <Donate />
-              <Blog />
-              <Event />
-              <Team />
-            </div>
-          } />
-          <Route path="/shadowpage" element={<Shadowpage />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/user-profile" element={<UserProfile />} /> {/* Ensure no props are needed */}
-          <Route path="/explore" element={<Explore />} />
-          <Route path="/team" element={<Team />} />
-          <Route path="/project" element={<Project />} />
-          <Route path="/donate" element={<Donate />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="*" element={<div>404 - Page Not Found</div>} />
-        </Routes>
-        <Footer />
-      </div>
+      <Routes>
+        <Route path="/" element={
+          <div className="min-h-screen flex flex-col">
+            <Navbar />
+            <Homepage />
+            <About />
+            <Announcement />
+            <Course />
+            <Project />
+            <Donate />
+            <Blog />
+            <Event />
+            <Team />
+            <Footer />
+          </div>
+        } />
+        <Route path="/shadowpage" element={<Shadowpage />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/announcement' element={<Announcement />} />
+        <Route path='/event' element={<Event />} />
+        <Route path='/course' element={<Course />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/user-profile" element={<UserProfile />} />
+        <Route path="/explore" element={<Explore />} />
+        <Route path="/team" element={<Team />} />
+        <Route path="/project" element={<Project />} />
+        <Route path="/donate" element={<Donate />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="*" element={<div>404 - Page Not Found</div>} />
+      </Routes>
     </Router>
   );
 };

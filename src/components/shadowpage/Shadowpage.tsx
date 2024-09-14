@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaYoutube, FaInstagram, FaFacebook, FaLinkedin } from 'react-icons/fa';
-import { FaTwitter } from 'react-icons/fa'; // Correct import for Twitter icon
+import { FaSquareXTwitter } from 'react-icons/fa6';
 import { motion } from 'framer-motion'; // Import framer-motion
 
 const Shadowpage: React.FC = () => {
     const navigate = useNavigate();
 
     const handleClose = () => {
-        navigate(-1); // Navigate back to the previous page in history
+        navigate(-1); // This navigates back to the previous page in history
     };
 
     // Define animation variants for text appearance
@@ -22,7 +22,6 @@ const Shadowpage: React.FC = () => {
             <button
                 className="absolute top-5 left-6 md:left-12 text-white text-3xl md:text-4xl font-light hover:text-gray-300 hover:bg-white hover:bg-opacity-20 p-3 md:p-4 rounded-full transition-colors duration-300 flex items-center justify-center w-10 h-10 md:w-12 md:h-12"
                 onClick={handleClose}
-                aria-label="Close"
             >
                 ×
             </button>
@@ -93,19 +92,19 @@ const Shadowpage: React.FC = () => {
                     </div>
                 </div>
                 <div className="flex space-x-3 md:space-x-4">
-                    <a href="https://www.facebook.com" className="hover:text-gray-300 transition-colors duration-300 hover:bg-white hover:bg-opacity-20 p-3 md:p-4 rounded-full" aria-label="Facebook">
+                    <a href="https://www.facebook.com" className="hover:text-gray-300 transition-colors duration-300 hover:bg-white hover:bg-opacity-20 p-3 md:p-4 rounded-full">
                         <FaFacebook size={20} />
                     </a>
-                    <a href="https://www.twitter.com" className="hover:text-gray-300 transition-colors duration-300 hover:bg-white hover:bg-opacity-20 p-3 md:p-4 rounded-full" aria-label="Twitter">
-                        <FaTwitter size={20} />
+                    <a href="https://www.twitter.com" className="hover:text-gray-300 transition-colors duration-300 hover:bg-white hover:bg-opacity-20 p-3 md:p-4 rounded-full">
+                        <FaSquareXTwitter size={20} />
                     </a>
-                    <a href="https://www.youtube.com" className="hover:text-gray-300 transition-colors duration-300 hover:bg-white hover:bg-opacity-20 p-3 md:p-4 rounded-full" aria-label="YouTube">
+                    <a href="https://www.youtube.com" className="hover:text-gray-300 transition-colors duration-300 hover:bg-white hover:bg-opacity-20 p-3 md:p-4 rounded-full">
                         <FaYoutube size={20} />
                     </a>
-                    <a href="https://www.linkedin.com" className="hover:text-gray-300 transition-colors duration-300 hover:bg-white hover:bg-opacity-20 p-3 md:p-4 rounded-full" aria-label="LinkedIn">
+                    <a href="https://www.linkedin.com" className="hover:text-gray-300 transition-colors duration-300 hover:bg-white hover:bg-opacity-20 p-3 md:p-4 rounded-full">
                         <FaLinkedin size={20} />
                     </a>
-                    <a href="https://www.instagram.com" className="hover:text-gray-300 transition-colors duration-300 hover:bg-white hover:bg-opacity-20 p-3 md:p-4 rounded-full" aria-label="Instagram">
+                    <a href="https://www.instagram.com" className="hover:text-gray-300 transition-colors duration-300 hover:bg-white hover:bg-opacity-20 p-3 md:p-4 rounded-full">
                         <FaInstagram size={20} />
                     </a>
                 </div>
