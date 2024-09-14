@@ -1,25 +1,49 @@
+import React from 'react';
+import { FaLinkedin, FaInstagram } from 'react-icons/fa';
+
 const teamMembers = [
     {
-        name: 'Shabd Patel',
+        name: 'Ajay Mokta',
         role: 'Project Manager',
-        image: '/photo.jpg', // Replace with the correct image path
+        image: '/photo1.jpg',
+        linkedin: 'https://www.linkedin.com/in/ajay-mokta-ab9b28247?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+        instagram: 'https://www.instagram.com/ajay.mokta?igsh=bGZmc3RzanFram9s'
     },
     {
         name: 'Shabd Patel',
         role: 'Lead Developer',
-        image: '/photo.jpg', // Replace with the correct image path
+        image: '/photo2.jpg',
+        linkedin: 'https://www.linkedin.com/in/shabdpatel',
+        instagram: 'https://www.instagram.com/shabdpatel'
     },
     {
-        name: 'Shabd Patel',
+        name: 'Nishant Prakhar',
         role: 'UI/UX Designer',
-        image: '/photo.jpg', // Replace with the correct image path
+        image: '/photo3.jpg',
+        linkedin: 'https://www.linkedin.com/in/nishant-prakhar?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+        instagram: 'https://www.instagram.com/nishant.prakhar?igsh=ZW81MHRvOWcwbWRj'
     },
     {
-        name: 'Shabd Patel',
+        name: 'Piyush Keshari',
         role: 'Frontend Developer',
-        image: '/photo.jpg', // Replace with the correct image path
+        image: '/photo4.jpg',
+        linkedin: 'https://www.linkedin.com/in/piyush-keshri-22156025a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+        instagram: 'https://www.instagram.com/piyushkeshri442?igsh=eHZ0bDlvdHZ6ZWVm'
     },
-    // Add more team members as needed
+    {
+        name: 'Ayush Sharma',
+        role: 'Frontend Developer',
+        image: '',
+        linkedin: 'https://www.linkedin.com/in/ayushsharma',
+        instagram: 'https://www.instagram.com/ayushsharma'
+    },
+    {
+        name: 'Sanchit Mittal',
+        role: 'Frontend Developer',
+        image: '/photo5.jpg',
+        linkedin: 'https://www.linkedin.com/in/sanchit-mittal-041a3b28b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+        instagram: 'https://www.instagram.com/sanchit068?igsh=MW5lMnA5Y3V6c3Bhag=='
+    },
 ];
 
 const Team = () => {
@@ -44,6 +68,18 @@ const Team = () => {
                             <div className="p-6 text-center">
                                 <h3 className="text-xl font-semibold text-gray-800">{member.name}</h3>
                                 <p className="mt-2 text-gray-600">{member.role}</p>
+                                <div className="mt-2 flex justify-center space-x-4">
+                                    {member.linkedin && (
+                                        <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-teal-600">
+                                            <FaLinkedin size={24} />
+                                        </a>
+                                    )}
+                                    {member.instagram && (
+                                        <a href={member.instagram} target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-teal-600">
+                                            <FaInstagram size={24} />
+                                        </a>
+                                    )}
+                                </div>
                             </div>
                         </div>
                     ))}
