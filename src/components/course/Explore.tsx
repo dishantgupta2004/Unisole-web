@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { RxCross2 } from "react-icons/rx";
+import { RxCross2 } from 'react-icons/rx';
 
 // Define types
 interface Course {
@@ -27,8 +27,9 @@ const CourseModal: React.FC<CourseModalProps> = ({ course, isOpen, onClose }) =>
                 <button
                     className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
                     onClick={onClose}
+                    aria-label="Close modal"
                 >
-                    <RxCross2 size={24} /> {/* Correct size syntax */}
+                    <RxCross2 size={24} />
                 </button>
 
                 <h2 className="text-2xl font-bold mb-4">{course.title}</h2>
@@ -43,6 +44,7 @@ const CourseModal: React.FC<CourseModalProps> = ({ course, isOpen, onClose }) =>
     );
 };
 
+// Explore Component
 const Explore: React.FC = () => {
     const [courses, setCourses] = useState<Course[]>([]);
     const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
@@ -76,7 +78,7 @@ const Explore: React.FC = () => {
                 {courses.map((course, index) => (
                     <div
                         key={index}
-                        className={`p-6 rounded-lg shadow-lg ${index % 2 === 0 ? "bg-teal-700" : "bg-teal-400"} text-white cursor-pointer`}
+                        className={`p-6 rounded-lg shadow-lg ${index % 2 === 0 ? 'bg-teal-700' : 'bg-teal-400'} text-white cursor-pointer`}
                         onClick={() => openModal(course)}
                     >
                         <h2 className="text-xl font-semibold mb-4">{course.title}</h2>

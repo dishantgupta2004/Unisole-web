@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { FaSearch } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
-import { RxCross2 } from "react-icons/rx";
+import { RxCross2 } from 'react-icons/rx';
 
+// Define types
 interface Course {
     title: string;
     description: string;
@@ -27,8 +28,9 @@ const CourseModal: React.FC<CourseModalProps> = ({ course, isOpen, onClose }) =>
                 <button
                     className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
                     onClick={onClose}
+                    aria-label="Close modal"
                 >
-                    <RxCross2 size={24} /> {/* Correct size syntax */}
+                    <RxCross2 size={24} />
                 </button>
 
                 <h2 className="text-xl md:text-2xl font-bold mb-4">{course.title}</h2>
@@ -43,7 +45,8 @@ const CourseModal: React.FC<CourseModalProps> = ({ course, isOpen, onClose }) =>
     );
 };
 
-const Course: React.FC = () => {
+// Course Page Component
+const CoursePage: React.FC = () => {
     const navigate = useNavigate();
     const [courses, setCourses] = useState<Course[]>([]);
     const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
@@ -131,4 +134,4 @@ const Course: React.FC = () => {
     );
 }
 
-export default Course;
+export default CoursePage;
