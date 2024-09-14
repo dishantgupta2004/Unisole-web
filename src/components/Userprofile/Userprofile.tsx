@@ -1,16 +1,27 @@
 import React, { useState, useEffect } from 'react';
-import { onAuthStateChanged } from 'firebase/auth';
+import { onAuthStateChanged, User } from 'firebase/auth';
 import { auth } from '../../firebase';
 
+interface UserProfileProps {
+    user: User | null;
+}
+
 const UserProfile: React.FC = () => {
-    const [user, setUser] = useState<any>(null);
+    const [user, setUser] = useState<User | null>(null);
+    const [loading, setLoading] = useState<boolean>(true);
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser);
+            setLoading(false); // Set loading to false once user is fetched
         });
+
         return () => unsubscribe();
     }, []);
+
+    if (loading) {
+        return <div className="p-8 bg-slate-100 mt-20 min-h-screen text-center">Loading...</div>;
+    }
 
     return (
         <div className="p-8 bg-slate-100 mt-20 min-h-screen">
@@ -18,13 +29,13 @@ const UserProfile: React.FC = () => {
                 <div className="bg-gray-200 p-6 rounded-lg shadow-lg max-w-md mx-auto">
                     <div className="flex items-center mb-6">
                         <img
-                            src={user.photoURL}
+                            src={user.photoURL || '/default-avatar.jpg'} // Provide a default image if photoURL is not available
                             alt="User"
                             className="w-20 h-20 rounded-full mr-4"
                         />
                         <div>
-                            <h2 className="text-2xl font-semibold">{user.displayName}</h2>
-                            <p className="text-gray-600">{user.email}</p>
+                            <h2 className="text-2xl font-semibold">{user.displayName || 'No name provided'}</h2>
+                            <p className="text-gray-600">{user.email || 'No email provided'}</p>
                         </div>
                     </div>
                     <div className="mb-4">
@@ -41,7 +52,7 @@ const UserProfile: React.FC = () => {
                     </div>
                 </div>
             ) : (
-                <p>Loading...</p>
+                <div className="text-center text-gray-600">User not authenticated.</div>
             )}
         </div>
     );

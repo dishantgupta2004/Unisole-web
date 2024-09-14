@@ -1,6 +1,9 @@
 import React from 'react';
 
 const Event: React.FC = () => {
+    // Array of image sources for the gallery
+    const images = ['e1.jpg', 'e2.jpg', 'e3.jpg', 'e4.jpg', 'e5.jpg', 'e6.jpg'];
+
     return (
         <div className="py-10 bg-slate-200 text-center">
             <h2 className="mt-8 font-retro text-darkBrown mb-4 text-3xl sm:text-4xl lg:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-teal-600 to-cyan-900 font-bold">
@@ -12,7 +15,7 @@ const Event: React.FC = () => {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4 sm:px-12 lg:px-32">
                 {/* Example photos with retro styling */}
-                {['e1.jpg', 'e2.jpg', 'e3.jpg', 'e4.jpg', 'e5.jpg', 'e6.jpg'].map((imgSrc, index) => (
+                {images.map((imgSrc, index) => (
                     <div
                         key={index}
                         className="album-item p-2 border-4 border-gray-100 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"

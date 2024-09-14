@@ -46,8 +46,9 @@ const Blog: React.FC = () => {
                         <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
                             <img
                                 src={blog.image}
-                                alt={blog.title}
+                                alt={`${blog.title} thumbnail`}
                                 className="h-48 w-full object-cover"
+                                loading="lazy"
                             />
                             <div className="p-6">
                                 <h3 className="text-xl sm:text-2xl font-bold text-gray-900">
@@ -69,8 +70,11 @@ const Blog: React.FC = () => {
             </div>
 
             {isModalOpen && selectedBlog && (
-                <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 px-4 sm:px-6 lg:px-8">
-                    <div className="bg-white rounded-lg shadow-lg max-w-lg w-full p-6 relative overflow-y-auto max-h-[90vh]">
+                <div
+                    className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 px-4 sm:px-6 lg:px-8"
+                    aria-hidden="true"
+                >
+                    <div className="bg-white rounded-lg shadow-lg max-w-lg w-full p-6 relative overflow-y-auto max-h-[90vh]" aria-modal="true">
                         <button
                             onClick={closeModal}
                             className="absolute top-4 right-4 text-gray-700 hover:text-gray-900 text-2xl"
@@ -84,8 +88,9 @@ const Blog: React.FC = () => {
                         <p className="text-gray-500 text-sm mb-4">By: {selectedBlog.owner}</p>
                         <img
                             src={selectedBlog.image}
-                            alt={selectedBlog.title}
+                            alt={`${selectedBlog.title} image`}
                             className="w-full h-64 object-cover rounded-md mb-4"
+                            loading="lazy"
                         />
                         <p className="text-gray-700 mb-4">{selectedBlog.fullContent}</p>
                     </div>

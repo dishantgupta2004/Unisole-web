@@ -4,8 +4,8 @@ import { auth, provider } from '../../firebase';
 import { signInWithPopup, signInWithEmailAndPassword } from 'firebase/auth';
 
 const Login: React.FC = () => {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    const [email, setEmail] = useState<string>('');
+    const [password, setPassword] = useState<string>('');
     const navigate = useNavigate();
 
     const handleGoogleLogin = async () => {
@@ -64,7 +64,7 @@ const Login: React.FC = () => {
                         className="bg-gradient-to-r from-red-500 to-red-600 text-white w-full py-2 rounded-lg shadow-md hover:from-red-600 hover:to-red-700 flex items-center justify-center"
                         onClick={handleGoogleLogin}
                     >
-                        {/* <img src="/google-icon.svg" alt="" className="w-5 h-5 mr-2" /> */}
+                        {/* Google icon can be added here */}
                         Login with Google
                     </button>
                 </div>

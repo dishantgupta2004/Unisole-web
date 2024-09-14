@@ -1,7 +1,21 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
+// Define a type for the feature object
+type Feature = {
+    imgSrc: string;
+    alt: string;
+    title: string;
+};
+
 const About: React.FC = () => {
+    const features: Feature[] = [
+        { imgSrc: "ace.png", alt: "Unconventional Skills", title: "Unconventional Skills" },
+        { imgSrc: "lifetime.png", alt: "Lifetime Learning", title: "Lifetime Learning" },
+        { imgSrc: "courses.png", alt: "Custom Courses", title: "Custom Courses" },
+        { imgSrc: "heleum.png", alt: "Innovative Thinking", title: "Innovative Thinking" },
+    ];
+
     return (
         <div className="text-center p-8 bg-gray-100">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-teal-600 to-cyan-900 font-bold mb-2">Our Key Features</h2>
@@ -9,12 +23,7 @@ const About: React.FC = () => {
 
             <div className="flex flex-wrap justify-center gap-4 sm:gap-8 mt-8">
                 {/* Feature Cards */}
-                {[
-                    { imgSrc: "ace.png", alt: "Unconventional Skills", title: "Unconventional Skills" },
-                    { imgSrc: "lifetime.png", alt: "Lifetime Learning", title: "Lifetime Learning" },
-                    { imgSrc: "courses.png", alt: "Custom Courses", title: "Custom Courses" },
-                    { imgSrc: "heleum.png", alt: "Innovative Thinking", title: "Innovative Thinking" },
-                ].map((feature, index) => (
+                {features.map((feature, index) => (
                     <div
                         key={index}
                         className="bg-gray-300 p-6 rounded-lg shadow-lg w-40 sm:w-48 md:w-56 lg:w-60 hover:bg-gray-400 hover:scale-105 transition-all duration-300 ease-in-out"

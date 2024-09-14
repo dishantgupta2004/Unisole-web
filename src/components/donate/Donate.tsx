@@ -1,17 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, ChangeEvent, MouseEvent } from 'react';
 
-const Donate = () => {
-    const [selectedAmount, setSelectedAmount] = useState('');
-    const [customAmount, setCustomAmount] = useState('');
+// Type for the donation amount
+type Amount = number | '';
 
-    const handleSelectAmount = (amount) => {
+const Donate: React.FC = () => {
+    const [selectedAmount, setSelectedAmount] = useState<Amount>('');
+    const [customAmount, setCustomAmount] = useState<string>('');
+
+    const handleSelectAmount = (amount: number) => {
         setSelectedAmount(amount);
         setCustomAmount(''); // Clear custom input when a preset amount is selected
     };
 
-    const handleCustomAmountChange = (e) => {
+    const handleCustomAmountChange = (e: ChangeEvent<HTMLInputElement>) => {
         setCustomAmount(e.target.value);
         setSelectedAmount(''); // Clear selected amount when typing a custom amount
+    };
+
+    const handleDonateClick = () => {
+        alert(`You are donating ₹${customAmount || selectedAmount}. Thank you!`);
     };
 
     return (
@@ -66,7 +73,7 @@ const Donate = () => {
                     {/* Donate Button */}
                     <button
                         className="w-full bg-teal-600 text-white font-bold py-3 rounded-lg hover:bg-teal-700 transition-colors duration-300"
-                        onClick={() => alert(`You are donating ₹${customAmount || selectedAmount}. Thank you!`)}
+                        onClick={handleDonateClick}
                     >
                         Donate Now
                     </button>

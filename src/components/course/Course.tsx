@@ -3,19 +3,32 @@ import { FaSearch } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import { RxCross2 } from "react-icons/rx";
 
+interface Course {
+    title: string;
+    description: string;
+    details: string[];
+    oldPrice?: string;
+}
+
+interface CourseModalProps {
+    course: Course | null;
+    isOpen: boolean;
+    onClose: () => void;
+}
+
 // Modal Component
-const CourseModal = ({ course, isOpen, onClose }) => {
-    if (!isOpen) return null;
+const CourseModal: React.FC<CourseModalProps> = ({ course, isOpen, onClose }) => {
+    if (!isOpen || !course) return null;
 
     return (
         <div className="fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center z-50">
             <div className="relative bg-white p-8 rounded-lg shadow-lg max-w-xs sm:max-w-md md:max-w-lg w-full mx-4">
                 {/* Close Button */}
                 <button
-                    className="absolute size-4 top-4 right-4 text-gray-500 hover:text-gray-700"
+                    className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
                     onClick={onClose}
                 >
-                    <RxCross2 />
+                    <RxCross2 size={24} /> {/* Correct size syntax */}
                 </button>
 
                 <h2 className="text-xl md:text-2xl font-bold mb-4">{course.title}</h2>
@@ -32,8 +45,8 @@ const CourseModal = ({ course, isOpen, onClose }) => {
 
 const Course: React.FC = () => {
     const navigate = useNavigate();
-    const [courses, setCourses] = useState([]);
-    const [selectedCourse, setSelectedCourse] = useState(null);
+    const [courses, setCourses] = useState<Course[]>([]);
+    const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
     const [isModalOpen, setModalOpen] = useState(false);
 
     useEffect(() => {
@@ -44,7 +57,7 @@ const Course: React.FC = () => {
             .catch(error => console.error('Error fetching course data:', error));
     }, []);
 
-    const openModal = (course) => {
+    const openModal = (course: Course) => {
         setSelectedCourse(course);
         setModalOpen(true);
     };
@@ -85,7 +98,9 @@ const Course: React.FC = () => {
                                 </div>
                                 <div className="flex flex-col items-end">
                                     <p className="text-lg text-teal-800 font-semibold">Free</p>
-                                    <p className="text-xl text-teal-600 font-semibold line-through">{course.oldPrice}</p>
+                                    {course.oldPrice && (
+                                        <p className="text-xl text-teal-600 font-semibold line-through">{course.oldPrice}</p>
+                                    )}
                                     <button className="mt-2 px-3 py-1 sm:px-4 sm:py-2 bg-teal-600 text-white rounded-lg">Enroll</button>
                                 </div>
                             </div>

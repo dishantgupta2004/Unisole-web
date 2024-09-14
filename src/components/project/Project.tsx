@@ -15,7 +15,7 @@ const projects = [
 ];
 
 // Modal Component to show more information about the project
-const ProjectModal = ({ project, isOpen, onClose }) => {
+const ProjectModal: React.FC<{ project: typeof projects[0]; isOpen: boolean; onClose: () => void }> = ({ project, isOpen, onClose }) => {
     if (!isOpen) return null;
 
     return (
@@ -49,10 +49,10 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
 };
 
 const Project: React.FC = () => {
-    const [selectedProject, setSelectedProject] = useState(null);
+    const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
     const [isModalOpen, setModalOpen] = useState(false);
 
-    const openModal = (project) => {
+    const openModal = (project: typeof projects[0]) => {
         setSelectedProject(project);
         setModalOpen(true);
     };
@@ -101,15 +101,13 @@ const Project: React.FC = () => {
                             autoPlay
                             loop
                             muted
-                            controls={true}  // Show video controls
+                            controls
                         />
                     </div>
-
-
                 </div>
 
                 {/* Upcoming Projects Section */}
-                <p className="text-center text-gray-600 mb-4 mt-4" >Stay tuned for our upcoming projects as we continue to innovate and push boundaries beyond.</p>
+                <p className="text-center text-gray-600 mb-4 mt-4">Stay tuned for our upcoming projects as we continue to innovate and push boundaries beyond.</p>
 
                 {/* Modal */}
                 {selectedProject && (

@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { FaBullhorn, FaChevronUp, FaChevronDown } from 'react-icons/fa';
 
+// Define a type for the announcement object
 type AnnouncementType = {
     id: number;
     title: string;
@@ -14,9 +15,10 @@ const Announcement: React.FC = () => {
     const scrollRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
+        // Fetching announcements from a local JSON file, update the path if necessary
         fetch('/Announcement.json')
             .then((response) => response.json())
-            .then((data) => setAnnouncements(data))
+            .then((data: AnnouncementType[]) => setAnnouncements(data))
             .catch((error) => console.error('Error fetching announcements:', error));
     }, []);
 
@@ -42,7 +44,10 @@ const Announcement: React.FC = () => {
                 </div>
 
                 <div className="flex justify-center my-4">
-                    <button onClick={() => handleScroll('up')} className="bg-teal-500 hover:bg-teal-600 text-white p-2 rounded-full shadow-lg focus:outline-none">
+                    <button
+                        onClick={() => handleScroll('up')}
+                        className="bg-teal-500 hover:bg-teal-600 text-white p-2 rounded-full shadow-lg focus:outline-none"
+                    >
                         <FaChevronUp className="text-xl sm:text-2xl" />
                     </button>
                 </div>
@@ -66,7 +71,10 @@ const Announcement: React.FC = () => {
                 </div>
 
                 <div className="flex justify-center my-4">
-                    <button onClick={() => handleScroll('down')} className="bg-teal-500 hover:bg-teal-600 text-white p-2 rounded-full shadow focus:outline-none">
+                    <button
+                        onClick={() => handleScroll('down')}
+                        className="bg-teal-500 hover:bg-teal-600 text-white p-2 rounded-full shadow focus:outline-none"
+                    >
                         <FaChevronDown className="text-xl sm:text-2xl" />
                     </button>
                 </div>

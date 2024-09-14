@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaUser } from 'react-icons/fa';
-import { onAuthStateChanged } from 'firebase/auth';
+import { onAuthStateChanged, User as FirebaseUser } from 'firebase/auth';
 import { auth } from '../../firebase';
 import UserProfilePopup from './UserProfilePopup';
 import '../../App.css';
 
 const Navbar: React.FC = () => {
     const navigate = useNavigate();
-    const [user, setUser] = useState<any>(null);
-    const [isPopupOpen, setIsPopupOpen] = useState(false);
+    const [user, setUser] = useState<FirebaseUser | null>(null);
+    const [isPopupOpen, setIsPopupOpen] = useState<boolean>(false);
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -27,7 +27,7 @@ const Navbar: React.FC = () => {
     };
 
     const togglePopup = () => {
-        setIsPopupOpen(!isPopupOpen);
+        setIsPopupOpen(prevState => !prevState);
     };
 
     const closePopup = () => {
