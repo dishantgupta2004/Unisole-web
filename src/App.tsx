@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Link as ScrollLink, Element } from 'react-scroll';
 import Navbar from './components/navbar/Navbar';
 import Homepage from './components/homepage/Homepage';
 import About from './components/about/About';
@@ -25,44 +24,25 @@ const App: React.FC = () => {
         <Routes>
           <Route path="/" element={
             <div>
-              <Element name="home">
-                <Homepage />
-              </Element>
-              <Element name="about">
-                <About />
-              </Element>
-              <Element name="announcement">
-                <Announcement />
-              </Element>
-              <Element name="course">
-                <Course />
-              </Element>
-              <Element name="project">
-                <Project />
-              </Element>
-              <Element name="donate">
-                <Donate />
-              </Element>
-              <Element name="blog">
-                <Blog />
-              </Element>
-              <Element name="event">
-                <Event />
-              </Element>
-              <Element name="team">
-                <Team />
-              </Element>
+              <Homepage />
+              <About />
+              <Announcement />
+              <Course />
+              <Project />
+              <Donate />
+              <Blog />
+              <Event />
+              <Team />
             </div>
           } />
           <Route path="/shadowpage" element={<Shadowpage />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/user-profile" element={<UserProfile />} />
+          <Route path="/user-profile" element={<UserProfile />} /> {/* Ensure no props are needed */}
           <Route path="/explore" element={<Explore />} />
           <Route path="/team" element={<Team />} />
           <Route path="/project" element={<Project />} />
           <Route path="/donate" element={<Donate />} />
           <Route path="/blog" element={<Blog />} />
-          {/* Add a route for 404 errors */}
           <Route path="*" element={<div>404 - Page Not Found</div>} />
         </Routes>
         <Footer />
