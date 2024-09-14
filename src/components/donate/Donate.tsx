@@ -6,7 +6,8 @@ type Amount = number | '';
 const Donate: React.FC = () => {
     const [selectedAmount, setSelectedAmount] = useState<Amount>('');
     const [customAmount, setCustomAmount] = useState<string>('');
-    const [paymentMethod, setPaymentMethod] = useState<string>('Credit Card');
+    const [paymentMethod, setPaymentMethod] = useState<string>('UPI'); // Default to Google Pay (UPI)
+    const [showQRCode, setShowQRCode] = useState<boolean>(false);
 
     const handleSelectAmount = (amount: number) => {
         setSelectedAmount(amount);
@@ -24,10 +25,19 @@ const Donate: React.FC = () => {
     const handleDonateClick = () => {
         const amount = customAmount ? customAmount : selectedAmount;
         if (amount && Number(amount) > 0) {
-            alert(`You are donating ₹${amount}. Thank you!`);
+            if (paymentMethod === "UPI") {
+                // Show QR code modal for UPI payment
+                setShowQRCode(true);
+            } else {
+                alert('This payment method is coming soon.');
+            }
         } else {
             alert('Please enter a valid donation amount.');
         }
+    };
+
+    const closeQRCodeModal = () => {
+        setShowQRCode(false);
     };
 
     return (
@@ -80,9 +90,9 @@ const Donate: React.FC = () => {
                             onChange={(e) => setPaymentMethod(e.target.value)}
                             aria-label="Select payment method"
                         >
-                            <option value="Credit Card">Credit Card</option>
-                            <option value="PayPal">PayPal</option>
-                            <option value="Bank Transfer">Bank Transfer</option>
+                            <option value="UPI">UPI (Google Pay)</option>
+                            <option value="Credit Card" disabled>Credit Card (Coming Soon)</option>
+                            <option value="Bank Transfer" disabled>Bank Transfer (Coming Soon)</option>
                         </select>
                     </div>
 
@@ -95,6 +105,24 @@ const Donate: React.FC = () => {
                         Donate Now
                     </button>
                 </div>
+
+                {/* QR Code Modal */}
+                {showQRCode && (
+                    <div className="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center z-50">
+                        <div className="bg-white rounded-lg p-6 sm:p-8 max-w-lg w-full relative">
+                            <button
+                                className="absolute top-2 right-2 text-gray-400 hover:text-gray-600"
+                                onClick={closeQRCodeModal}
+                                aria-label="Close QR code modal"
+                            >
+                                &times;
+                            </button>
+                            <h3 className="text-xl sm:text-2xl font-bold mb-4 text-gray-800 text-center">Scan QR Code to Donate</h3>
+                            <img src="/qr.jpeg" alt="QR Code for Google Pay" className="mx-auto mb-6 w-full max-w-xs" /> {/* Add your QR code image path */}
+                            <p className="text-gray-700 text-center">Scan this code using any UPI app to complete your donation.</p>
+                        </div>
+                    </div>
+                )}
 
                 {/* Info Section */}
                 <p className="text-center text-gray-600 mt-8 text-sm sm:text-base">
