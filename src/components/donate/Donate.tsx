@@ -119,7 +119,18 @@ const Donate: React.FC = () => {
                             </button>
                             <h3 className="text-xl sm:text-2xl font-bold mb-4 text-gray-800 text-center">Scan QR Code to Donate</h3>
                             <img src="/qr.jpeg" alt="QR Code for Google Pay" className="mx-auto mb-6 w-full max-w-xs" /> {/* Add your QR code image path */}
-                            <p className="text-gray-700 text-center">Scan this code using any UPI app to complete your donation.</p>
+                            <p className="text-gray-700 text-center mb-4">Scan this code using any UPI app to complete your donation.</p>
+
+                            {/* Clickable UPI Link */}
+                            <div className="text-center">
+                                <a
+                                    href="upi://pay?pa=shabdpatel0@oksbi&pn=Shabd%20Patel&aid=uGICAgMCyp-_ofw"
+                                    className="text-teal-600 font-semibold hover:underline"
+                                    aria-label="Pay with Google Pay"
+                                >
+                                    Click here to pay with Google Pay
+                                </a>
+                            </div>
                         </div>
                     </div>
                 )}
