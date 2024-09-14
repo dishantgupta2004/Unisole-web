@@ -6,7 +6,7 @@ type AnnouncementType = {
     title: string;
     content: string;
     date: string;
-    url: string; // Add the URL field
+    url: string;
 };
 
 const Announcement: React.FC = () => {
@@ -32,45 +32,51 @@ const Announcement: React.FC = () => {
     };
 
     return (
-        <div className="w-full bg-gray-100 text-slate-600 py-12">
-            <div className="bg-slate-300 p-6 rounded-lg shadow-md mx-auto max-w-4xl">
-                <div className="flex items-center mb-4">
-                    <FaBullhorn className="text-4xl mr-4 text-teal-600" />
-                    <h2 className="text-3xl font-bold">Important Announcements</h2>
+        <div className="w-full bg-gradient-to-b from-teal-100 to-cyan-200 text-slate-600 py-8 sm:py-12">
+            <div className="bg-white shadow-lg rounded-lg mx-auto max-w-full sm:max-w-2xl md:max-w-4xl">
+                <div className="bg-teal-300 p-6 rounded-t-lg">
+                    <div className="flex items-center">
+                        <FaBullhorn className="text-4xl text-teal-600 mr-4" />
+                        <h2 className="text-3xl font-bold text-teal-600">Important Announcements</h2>
+                    </div>
                 </div>
 
-                <div className="flex justify-center mb-2">
-                    <button onClick={() => handleScroll('up')}>
-                        <FaChevronUp className="text-2xl text-teal-600" />
+                <div className="flex justify-center my-4">
+                    <button onClick={() => handleScroll('up')} className="bg-teal-500 hover:bg-teal-600 text-white p-2 rounded-full shadow-lg focus:outline-none">
+                        <FaChevronUp className="text-xl sm:text-2xl" />
                     </button>
                 </div>
 
-                <div ref={scrollRef} className="max-h-80 overflow-y-auto space-y-6 pr-2">
+                <div ref={scrollRef} className="max-h-64 sm:max-h-80 overflow-y-auto p-4 space-y-6">
                     {announcements.length > 0 ? (
                         announcements.map((announcement) => (
-                            <div key={announcement.id} className="announcement-item">
-                                <a href={announcement.url} target="_blank" rel="noopener noreferrer">
-                                    <p className="mt-4 text-lg font-bold">{announcement.title}</p>
+                            <div key={announcement.id} className="bg-white p-4 rounded-lg shadow-2xl hover:shadow-md transition-shadow duration-300">
+                                <a href={announcement.url} target="_blank" rel="noopener noreferrer" className="text-lg font-semibold text-teal-600 hover:text-teal-800">
+                                    {announcement.title}
                                 </a>
-                                <p className="mt-2 text-lg">{announcement.content}</p>
-                                <p className="mt-2 text-sm font-light">
-                                    <em>Posted on: {announcement.date}</em>
+                                <p className="mt-2 text-base text-gray-700">{announcement.content}</p>
+                                <p className="mt-2 text-sm text-gray-500 italic">
+                                    Posted on: {announcement.date}
                                 </p>
                             </div>
                         ))
                     ) : (
-                        <p>No announcements available.</p>
+                        <p className="text-center text-gray-600">No announcements available.</p>
                     )}
                 </div>
 
-                <div className="flex justify-center mt-2">
-                    <button onClick={() => handleScroll('down')}>
-                        <FaChevronDown className="text-2xl text-teal-600" />
+                <div className="flex justify-center my-4">
+                    <button onClick={() => handleScroll('down')} className="bg-teal-500 hover:bg-teal-600 text-white p-2 rounded-full shadow focus:outline-none">
+                        <FaChevronDown className="text-xl sm:text-2xl" />
                     </button>
+                </div>
+
+                <div className="bg-gray-100 p-4 rounded-b-lg text-center text-sm text-gray-500">
+                    Keep checking for the latest updates!
                 </div>
             </div>
         </div>
     );
-}
+};
 
 export default Announcement;

@@ -19,7 +19,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
     if (!isOpen) return null;
 
     return (
-        <div className="fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center z-50">
+        <div className="fixed inset-0 bg-slate-800 bg-opacity-50 flex justify-center items-center z-50">
             <div className="bg-white p-8 rounded-lg shadow-lg max-w-lg w-full relative">
                 <button
                     className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
@@ -63,10 +63,11 @@ const Project: React.FC = () => {
     };
 
     return (
-        <div className="min-h-screen bg-gray-100 py-10">
+        <div className="min-h-screen bg-gradient-to-b from-teal-100 to-cyan-300 py-10">
             <div className="container mx-auto px-4">
-                <h1 className="text-4xl font-bold text-teal-600 text-center mb-12">Our Projects</h1>
-
+                {/* Our Projects Section */}
+                <h1 className="text-4xl font-bold text-teal-600 text-center mb-4">Our Projects</h1>
+                <p className="text-center text-gray-600 mb-12">Explore the projects we've worked on to bring innovative solutions to life.</p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     {projects.map((project, index) => (
                         <div key={index} className="bg-white rounded-lg shadow-lg p-6">
@@ -88,7 +89,27 @@ const Project: React.FC = () => {
                             </button>
                         </div>
                     ))}
+
+                    {/* Video Section as a card */}
+                    <div className="rounded-lg shadow-2xl w-auto p-6 flex justify-center items-center">
+                        <video
+                            width="100%"
+                            height="500"
+                            src="/Video.mp4"
+                            title="Project Video"
+                            className="rounded-lg"
+                            autoPlay
+                            loop
+                            muted
+                            controls={true}  // Show video controls
+                        />
+                    </div>
+
+
                 </div>
+
+                {/* Upcoming Projects Section */}
+                <p className="text-center text-gray-600 mb-4 mt-4" >Stay tuned for our upcoming projects as we continue to innovate and push boundaries beyond.</p>
 
                 {/* Modal */}
                 {selectedProject && (

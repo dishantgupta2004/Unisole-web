@@ -1,0 +1,26 @@
+[
+    {
+        "title": "Discovering the wonders of Artificial Intelligence: My incredible journey with Microsoft Azure",
+        "date": "September 10, 2024",
+        "description": "Learn the basics of setting up your own tech blog using modern web development tools...",
+        "fullContent": "I have always been fascinated by artificial intelligence (AI). It has the potential to revolutionize the way we think about and interact with technology. From self-driving cars to virtual assistants, AI is quickly becoming an integral part of our lives. That’s why I was so excited when I heard about Microsoft Azure AI challenge from Ashmit JaiSarita Gupta sir and its ability to help me develop and deploy AI powered applications. With its easy-to-use interface, I knew that Azure would be the perfect platform to help me explore the wonders of AI. Artificial intelligence (AI) is a branch of computer science that focuses on creating intelligent machines that can think, learn, and solve problems in the same way that humans do. AI is a broad term that encompasses many different types of technologies, including machine learning, natural language processing, computer vision, robotics, and more. At its core, AI is all about machines that can understand and learn from data. AI-powered applications can be used to automate mundane tasks, improve customer service, analyze large datasets, and even make predictions about the future.",
+        "image": "/blog1.webp",
+        "owner": "Shabd patel"
+    },
+    {
+        "title": "Top 10 JavaScript Frameworks to Watch in 2024",
+        "date": "August 25, 2024",
+        "description": "Explore the latest and most popular JavaScript frameworks that developers are excited about...",
+        "fullContent": "In-depth guide on the top 10 JavaScript frameworks in 2024, covering the pros and cons of each...",
+        "image": "/blog2.jpg",
+        "owner": "Jane Smith"
+    },
+    {
+        "title": "The Future of AI in Web Development",
+        "date": "August 5, 2024",
+        "description": "Discover how AI is shaping the future of web development...",
+        "fullContent": "Detailed article on how AI is transforming web development, with use cases and examples...",
+        "image": "/blog3.jpg",
+        "owner": "Alice Johnson"
+    }
+]

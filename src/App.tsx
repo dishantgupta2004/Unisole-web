@@ -14,6 +14,9 @@ import './App.css';
 import Course from './components/course/Course';
 import Team from './components/team/Team';
 import Project from './components/project/Project';
+import Footer from './components/footer/Footer';
+import Donate from './components/donate/Donate';
+import Blog from './components/blog/Blog';
 
 const App: React.FC = () => {
   return (
@@ -40,11 +43,20 @@ const App: React.FC = () => {
                 <Element name="project">
                   <Project />
                 </Element>
+                <Element name="donate">
+                  <Donate />
+                </Element>
+                <Element name="blog" >
+                  <Blog />
+                </Element>
                 <Element name="event">
                   <Event />
                 </Element>
                 <Element name="team">
                   <Team />
+                </Element>
+                <Element name="footer">
+                  <Footer />
                 </Element>
               </div>
             }
@@ -59,6 +71,8 @@ const App: React.FC = () => {
           <Route path="/explore" element={<Explore />} />
           <Route path="/team" element={<Team />} />
           <Route path="/project" element={<Project />} />
+          <Route path="/donate" element={<Donate />} />
+          <Route path="/blog" element={<Blog />} />
         </Routes>
       </div>
     </Router>
