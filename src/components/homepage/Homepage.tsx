@@ -5,7 +5,7 @@ import { Link as ScrollLink } from 'react-scroll';
 const Homepage: React.FC = () => {
     return (
         <div className="flex flex-col lg:flex-row items-center bg-gray-100 p-4 lg:p-8 relative" style={{ height: '95vh' }}>
-            <div className="flex flex-col justify-start text-left w-full lg:w-1/2 p-4 lg:p-8 lg:ml-16 mb-10 lg:mb-20">
+            <div className="flex flex-col justify-start text-left w-full lg:w-1/2 p-4 lg:p-8 lg:ml-16 mt-16 lg:mt-0 mb-10 lg:mb-20">
                 <h1 className="bg-clip-text text-transparent bg-gradient-to-r from-teal-600 to-cyan-900 font-bold text-4xl md:text-5xl lg:text-6xl mb-6 lg:mb-8">
                     Welcome to Unisole
                 </h1>

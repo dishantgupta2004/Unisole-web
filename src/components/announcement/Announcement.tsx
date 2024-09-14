@@ -52,17 +52,26 @@ const Announcement: React.FC = () => {
                     </button>
                 </div>
 
-                <div ref={scrollRef} className="max-h-64 sm:max-h-80 overflow-y-auto p-4 space-y-6">
+                <div
+                    ref={scrollRef}
+                    className="overflow-y-auto p-4 space-y-6 max-h-[calc(8rem*2)] sm:max-h-80" // Dynamically adjust height for mobile
+                >
                     {announcements.length > 0 ? (
                         announcements.map((announcement) => (
-                            <div key={announcement.id} className="bg-white p-4 rounded-lg shadow-2xl hover:shadow-md transition-shadow duration-300">
-                                <a href={announcement.url} target="_blank" rel="noopener noreferrer" className="text-lg font-semibold text-teal-600 hover:text-teal-800">
+                            <div
+                                key={announcement.id}
+                                className="bg-white p-4 rounded-lg shadow-2xl hover:shadow-md transition-shadow duration-300"
+                            >
+                                <a
+                                    href={announcement.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-lg font-semibold text-teal-600 hover:text-teal-800"
+                                >
                                     {announcement.title}
                                 </a>
                                 <p className="mt-2 text-base text-gray-700">{announcement.content}</p>
-                                <p className="mt-2 text-sm text-gray-500 italic">
-                                    Posted on: {announcement.date}
-                                </p>
+                                <p className="mt-2 text-sm text-gray-500 italic">Posted on: {announcement.date}</p>
                             </div>
                         ))
                     ) : (

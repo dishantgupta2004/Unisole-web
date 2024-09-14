@@ -11,7 +11,6 @@ type Feature = {
 const About: React.FC = () => {
     const features: Feature[] = [
         { imgSrc: "ace.png", alt: "Unconventional Skills", title: "Unconventional Skills" },
-        { imgSrc: "lifetime.png", alt: "Lifetime Learning", title: "Lifetime Learning" },
         { imgSrc: "courses.png", alt: "Custom Courses", title: "Custom Courses" },
         { imgSrc: "heleum.png", alt: "Innovative Thinking", title: "Innovative Thinking" },
     ];
@@ -21,7 +20,7 @@ const About: React.FC = () => {
             <h2 className="text-3xl sm:text-4xl lg:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-teal-600 to-cyan-900 font-bold mb-2">Our Key Features</h2>
             <p className="text-gray-600 text-sm sm:text-base font-semibold">Empower yourself with essential, unconventional knowledge</p>
 
-            <div className="flex flex-wrap justify-center gap-4 sm:gap-8 mt-8">
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mt-8">
                 {/* Feature Cards */}
                 {features.map((feature, index) => (
                     <div
