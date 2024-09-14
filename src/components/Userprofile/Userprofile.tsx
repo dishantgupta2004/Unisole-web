@@ -2,11 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { onAuthStateChanged, User } from 'firebase/auth';
 import { auth } from '../../firebase';
 
+// Define types
 interface UserProfileProps {
     user: User | null;
 }
 
-const UserProfile: React.FC = () => {
+const UserProfile: React.FC<UserProfileProps> = () => {
     const [user, setUser] = useState<User | null>(null);
     const [loading, setLoading] = useState<boolean>(true);
 
