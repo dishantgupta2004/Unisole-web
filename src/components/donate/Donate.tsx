@@ -3,31 +3,34 @@ import React, { useState, ChangeEvent } from 'react';
 // Type for the donation amount
 type Amount = number | '';
 
+// Donation Component
 const Donate: React.FC = () => {
     const [selectedAmount, setSelectedAmount] = useState<Amount>('');
     const [customAmount, setCustomAmount] = useState<string>('');
     const [paymentMethod, setPaymentMethod] = useState<string>('UPI'); // Default to Google Pay (UPI)
     const [showQRCode, setShowQRCode] = useState<boolean>(false);
 
+    // Function to handle preset amount selection
     const handleSelectAmount = (amount: number) => {
         setSelectedAmount(amount);
-        setCustomAmount(''); // Clear custom input when a preset amount is selected
+        setCustomAmount(''); // Clear custom input when preset amount is selected
     };
 
+    // Function to handle custom amount input
     const handleCustomAmountChange = (e: ChangeEvent<HTMLInputElement>) => {
         const value = e.target.value;
         if (!isNaN(Number(value)) && Number(value) > 0) {
             setCustomAmount(value);
-            setSelectedAmount(''); // Clear selected amount when typing a custom amount
+            setSelectedAmount(''); // Clear selected amount when custom amount is typed
         }
     };
 
+    // Handle the donation button click
     const handleDonateClick = () => {
         const amount = customAmount ? customAmount : selectedAmount;
         if (amount && Number(amount) > 0) {
             if (paymentMethod === "UPI") {
-                // Show QR code modal for UPI payment
-                setShowQRCode(true);
+                setShowQRCode(true); // Show QR code for UPI payment
             } else {
                 alert('This payment method is coming soon.');
             }
@@ -36,6 +39,7 @@ const Donate: React.FC = () => {
         }
     };
 
+    // Close QR Code modal
     const closeQRCodeModal = () => {
         setShowQRCode(false);
     };
@@ -111,7 +115,7 @@ const Donate: React.FC = () => {
                     <div className="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center z-50">
                         <div className="bg-white rounded-lg p-6 sm:p-8 max-w-lg w-full relative">
                             <button
-                                className="absolute top-2 right-2 text-gray-400 hover:text-gray-600"
+                                className="absolute top-2 right-2 text-gray-900 hover:text-gray-600 size-10"
                                 onClick={closeQRCodeModal}
                                 aria-label="Close QR code modal"
                             >

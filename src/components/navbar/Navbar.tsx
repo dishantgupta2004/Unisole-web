@@ -70,12 +70,12 @@ const Navbar: React.FC = () => {
                         {isPopupOpen && <UserProfilePopup onClose={closePopup} />}
                     </div>
                 ) : (
-                    <button
-                        className="ml-2 sm:ml-4 bg-blue-500 text-white px-2 py-1 sm:px-4 sm:py-2 rounded hover:bg-blue-600"
+                    <button className="bg-teal-600 text-white text-lg lg:text-1xl font-medium py-1 lg:py-1 px-3 lg:px-4 rounded-full flex items-center justify-center bg-gradient-to-r from-teal-600 to-cyan-900 hover:bg-teal-700 transform hover:scale-90 transition-transform duration-300"
                         onClick={handleLoginClick}
                     >
                         Login
                     </button>
+
                 )}
             </div>
         </nav>

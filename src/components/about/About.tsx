@@ -16,8 +16,10 @@ const About: React.FC = () => {
     ];
 
     return (
-        <div className="text-center p-8 bg-gray-100">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-teal-600 to-cyan-900 font-bold mb-2">Our Key Features</h2>
+        <div id="about" className="text-center p-8 bg-gray-100">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-teal-600 to-cyan-900 font-bold mb-2">
+                Our Key Features
+            </h2>
             <p className="text-gray-600 text-sm sm:text-base font-semibold">Empower yourself with essential, unconventional knowledge</p>
 
             <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mt-8">

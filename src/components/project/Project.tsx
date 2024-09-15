@@ -25,7 +25,7 @@ const ProjectModal: React.FC<{ project: typeof projects[0]; isOpen: boolean; onC
                     className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
                     onClick={onClose}
                 >
-                    <RxCross2 />
+                    <RxCross2 size={24} />
                 </button>
                 <h2 className="text-2xl font-bold mb-4">{project.title}</h2>
                 <p className="text-gray-600 mb-4">{project.details}</p>
@@ -39,7 +39,7 @@ const ProjectModal: React.FC<{ project: typeof projects[0]; isOpen: boolean; onC
                 </div>
                 <a
                     href={project.link}
-                    className="inline-block bg-teal-600 text-white px-4 py-2 rounded hover:bg-teal-700 transition duration-300"
+                    className="inline-block bg-gradient-to-r from-teal-600 to-cyan-900 text-white px-4 py-2 rounded-full hover:bg-teal-700 transition-transform transform hover:scale-105 duration-300"
                 >
                     View Project
                 </a>
@@ -83,7 +83,7 @@ const Project: React.FC = () => {
                             </div>
                             <button
                                 onClick={() => openModal(project)}
-                                className="inline-block bg-teal-600 text-white px-4 py-2 rounded hover:bg-teal-700 transition duration-300"
+                                className="inline-block bg-gradient-to-r from-teal-600 to-cyan-900 text-white px-4 py-2 rounded-full hover:bg-teal-700 transition-transform transform hover:scale-105 duration-300"
                             >
                                 View Project
                             </button>

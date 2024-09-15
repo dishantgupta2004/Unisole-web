@@ -110,7 +110,9 @@ const Explore: React.FC = () => {
                         {course.oldPrice && (
                             <p className="text-xl text-teal-600 font-semibold line-through">{course.oldPrice}</p>
                         )}
-                        <button className="mt-2 px-4 py-2 bg-teal-600 text-white rounded-lg">Enroll</button>
+                        <button className="mt-2 px-6 py-2 bg-gradient-to-r from-teal-600 to-cyan-900 text-white rounded-full font-bold text-lg flex items-center justify-center hover:bg-teal-700 transform hover:scale-105 transition-transform duration-300">
+                            Enroll
+                        </button>
                     </div>
                 </div>
             ))}

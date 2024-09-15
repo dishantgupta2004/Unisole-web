@@ -104,7 +104,10 @@ const CoursePage: React.FC = () => {
                                     {course.oldPrice && (
                                         <p className="text-xl text-teal-600 font-semibold line-through">{course.oldPrice}</p>
                                     )}
-                                    <button className="mt-2 px-3 py-1 sm:px-4 sm:py-2 bg-teal-600 text-white rounded-lg">Enroll</button>
+                                    {/* Updated Button */}
+                                    <button className="mt-2 px-3 py-1 sm:px-4 sm:py-2 text-base sm:text-lg bg-teal-600 text-white rounded-full flex items-center bg-gradient-to-r from-teal-600 to-cyan-900 justify-center hover:bg-teal-700 transform hover:scale-90 transition-transform duration-300">
+                                        Enroll
+                                    </button>
                                 </div>
                             </div>
                         ))}
@@ -114,7 +117,7 @@ const CoursePage: React.FC = () => {
                     <div className="flex justify-center mt-8">
                         <button
                             onClick={() => navigate('/explore')}
-                            className="bg-teal-600 text-white text-lg font-bold py-2 px-4 sm:py-3 sm:px-6 rounded-full flex items-center justify-center hover:bg-teal-700 transform hover:scale-105 transition-transform duration-300"
+                            className="bg-teal-600 text-white text-lg font-bold py-2 px-4 sm:py-3 sm:px-6 rounded-full flex items-center justify-center bg-gradient-to-r from-teal-600 to-cyan-900 hover:bg-teal-700 transform hover:scale-90 transition-transform duration-300"
                         >
                             More Courses
                         </button>
