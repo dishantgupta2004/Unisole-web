@@ -34,7 +34,7 @@ const Announcement: React.FC = () => {
     };
 
     return (
-        <div className="w-full bg-gradient-to-b from-teal-100 to-cyan-200 text-slate-600 py-8 sm:py-12">
+        <div className="w-full bg-gray-100 text-slate-600 py-8 sm:py-12">
             <div className="bg-white shadow-lg rounded-lg mx-auto max-w-full sm:max-w-2xl md:max-w-4xl">
                 <div className="bg-teal-300 p-6 rounded-t-lg">
                     <div className="flex items-center">

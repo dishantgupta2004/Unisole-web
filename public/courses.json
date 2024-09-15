@@ -22,5 +22,17 @@
         "price": "₹999",
         "oldPrice": "₹999",
         "image": "/ai.png"
+    },
+    {
+        "title": "Basics of Artificial Intelligence",
+        "description": "In collaboration with the National Institute of Technology Hamirpur. This course introduces you to foundational AI concepts, covering algorithms, machine learning, and neural networks, preparing you for various AI-focused exams and career paths.",
+        "details": [
+            "In collaboration with NIT Hamirpur",
+            "Covers foundational AI algorithms and concepts",
+            "Introduction to machine learning and neural networks"
+        ],
+        "price": "₹599",
+        "oldPrice": "₹799",
+        "image": "/python.png"
     }
 ]

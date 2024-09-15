@@ -82,29 +82,29 @@ const Shadowpage: React.FC = () => {
                     <div>
                         <p className="text-white font-bold text-lg">Get In Touch</p>
                         <p className="text-gray-500 text-sm md:text-base">NIT Hamirpur, Hamirpur, India (H.P.)</p>
-                        <p className="text-gray-500 text-sm md:text-base">shabdpatel0@gmail.com</p>
-                        <p className="text-gray-500 text-sm md:text-base">Ph: +91-8757489128</p>
+                        <p className="text-gray-500 text-sm md:text-base">unisole.empower@gmail.com</p>
+                        <p className="text-gray-500 text-sm md:text-base">Ph: +91-7876471141</p>
                     </div>
                     <div>
                         <p className="text-white font-bold text-lg">Work Inquiries</p>
-                        <p className="text-gray-500 text-sm md:text-base">22bph040@nith.ac.in</p>
-                        <p className="text-gray-500 text-sm md:text-base">Ph: +91-8757489128</p>
+                        <p className="text-gray-500 text-sm md:text-base">unisole.empower@gmail.com</p>
+                        <p className="text-gray-500 text-sm md:text-base">Ph: +91-7876471141</p>
                     </div>
                 </div>
                 <div className="flex space-x-3 md:space-x-4">
-                    <a href="https://www.facebook.com" className="hover:text-gray-300 transition-colors duration-300 hover:bg-white hover:bg-opacity-20 p-3 md:p-4 rounded-full">
+                    <a href="https://www.facebook.com/share/BpxwCa1JGzV9vS5g/?mibextid=qi2Omg" className="hover:text-gray-300 transition-colors duration-300 hover:bg-white hover:bg-opacity-20 p-3 md:p-4 rounded-full">
                         <FaFacebook size={20} />
                     </a>
-                    <a href="https://www.twitter.com" className="hover:text-gray-300 transition-colors duration-300 hover:bg-white hover:bg-opacity-20 p-3 md:p-4 rounded-full">
+                    <a href="https://x.com/ajaymokta294552?t=y_3WRA1zvJhIl8WgmptwqA&s=08" className="hover:text-gray-300 transition-colors duration-300 hover:bg-white hover:bg-opacity-20 p-3 md:p-4 rounded-full">
                         <FaSquareXTwitter size={20} />
                     </a>
-                    <a href="https://www.youtube.com" className="hover:text-gray-300 transition-colors duration-300 hover:bg-white hover:bg-opacity-20 p-3 md:p-4 rounded-full">
+                    <a href="https://www.youtube.com/@UnisoleEmpower" className="hover:text-gray-300 transition-colors duration-300 hover:bg-white hover:bg-opacity-20 p-3 md:p-4 rounded-full">
                         <FaYoutube size={20} />
                     </a>
-                    <a href="https://www.linkedin.com" className="hover:text-gray-300 transition-colors duration-300 hover:bg-white hover:bg-opacity-20 p-3 md:p-4 rounded-full">
+                    <a href="https://www.linkedin.com/in/unisole-empower-250030320/" className="hover:text-gray-300 transition-colors duration-300 hover:bg-white hover:bg-opacity-20 p-3 md:p-4 rounded-full">
                         <FaLinkedin size={20} />
                     </a>
-                    <a href="https://www.instagram.com" className="hover:text-gray-300 transition-colors duration-300 hover:bg-white hover:bg-opacity-20 p-3 md:p-4 rounded-full">
+                    <a href="https://www.instagram.com/unisole_empower?igsh=MTQ3d2F3bTR4ZW5oZQ==" className="hover:text-gray-300 transition-colors duration-300 hover:bg-white hover:bg-opacity-20 p-3 md:p-4 rounded-full">
                         <FaInstagram size={20} />
                     </a>
                 </div>

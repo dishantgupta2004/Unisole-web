@@ -10,9 +10,9 @@ type Feature = {
 
 const About: React.FC = () => {
     const features: Feature[] = [
-        { imgSrc: "ace.png", alt: "Unconventional Skills", title: "Unconventional Skills" },
-        { imgSrc: "courses.png", alt: "Custom Courses", title: "Custom Courses" },
-        { imgSrc: "heleum.png", alt: "Innovative Thinking", title: "Innovative Thinking" },
+        { imgSrc: "u.png", alt: "Unconventional Skills", title: "Unconventional Skills" },
+        { imgSrc: "c.png", alt: "Custom Courses", title: "Custom Courses" },
+        { imgSrc: "i.png", alt: "Innovative Thinking", title: "Innovative Thinking" },
     ];
 
     return (
@@ -22,15 +22,15 @@ const About: React.FC = () => {
             </h2>
             <p className="text-gray-600 text-sm sm:text-base font-semibold">Empower yourself with essential, unconventional knowledge</p>
 
-            <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mt-8">
-                {/* Feature Cards */}
+            <div className="flex flex-wrap justify-center gap-4 sm:gap-4 mt-8">
+                {/* Feature Cards with hover effect */}
                 {features.map((feature, index) => (
                     <div
                         key={index}
-                        className="bg-gray-300 p-6 rounded-lg shadow-lg w-40 sm:w-48 md:w-56 lg:w-60 hover:bg-gray-400 hover:scale-105 transition-all duration-300 ease-in-out"
+                        className="bg-slate-300 p-6 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300"
                     >
-                        <img src={feature.imgSrc} className="mx-auto mb-4 w-16 h-16" alt={feature.alt} />
-                        <h3 className="text-lg font-semibold">{feature.title}</h3>
+                        <img src={feature.imgSrc} className="mx-auto mb-4 w-28 h-24" alt={feature.alt} />
+                        <h3 className="text-lg text-slate-800 font-semibold">{feature.title}</h3>
                     </div>
                 ))}
             </div>
@@ -65,7 +65,7 @@ const About: React.FC = () => {
                     </div>
 
                     {/* Bottom Section */}
-                    <div className="flex flex-col md:flex-row justify-center items-center bg-teal-500 text-white py-4 rounded-lg shadow-lg mt-8">
+                    <div className="flex flex-col md:flex-row justify-center items-center bg-teal-300 text-zinc-700 py-4 rounded-lg shadow-lg mt-8">
                         <motion.img
                             src="/man.png"
                             alt="Illustration"
@@ -78,7 +78,6 @@ const About: React.FC = () => {
                                 We believe in skills over knowledge, and therefore, the services provided by us would help learners a long way in the future and assist them fairly well while making important career decisions...
                             </p>
                         </div>
-
                     </div>
                 </div>
             </div>

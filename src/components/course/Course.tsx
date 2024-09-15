@@ -71,7 +71,7 @@ const CoursePage: React.FC = () => {
     };
 
     return (
-        <div className="flex items-center justify-center min-h-screen bg-gradient-to-b from-neutral-100 to-blue-100 p-4">
+        <div className="flex items-center justify-center min-h-screen bg-gray-100 p-4">
             <div className="bg-slate-300 rounded-lg shadow-md mt-10 mb-8 p-6 sm:p-8 w-full max-w-5xl h-auto min-h-[500px] relative">
                 <h1 className="text-2xl sm:text-3xl font-semibold text-teal-600 mb-6">
                     Pick a course and get going <span className="font-bold">NOW!</span>

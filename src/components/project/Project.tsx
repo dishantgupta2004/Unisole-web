@@ -10,7 +10,7 @@ const projects = [
         details: `The Anti-Hailstorm Pillar is designed to protect apple crops from severe weather using AI-driven solutions.
         It predicts hailstorms using real-time weather data and triggers automated responses such as deploying protective hail nets and activating heating systems.
         Key features include improved air circulation, optimized light exposure, and temperature/humidity control to enhance crop growth.`,
-        link: "#"
+        link: "https://docs.google.com/document/d/1qnWqtMb_1CZiyovHcSW89KWGQqMXxk6nm8XOgKk8HqA/edit?usp=sharing"
     }
 ];
 
@@ -39,6 +39,8 @@ const ProjectModal: React.FC<{ project: typeof projects[0]; isOpen: boolean; onC
                 </div>
                 <a
                     href={project.link}
+                    target="_blank" // Opens the link in a new tab
+                    rel="noopener noreferrer" // Security measure to prevent access to the original window
                     className="inline-block bg-gradient-to-r from-teal-600 to-cyan-900 text-white px-4 py-2 rounded-full hover:bg-teal-700 transition-transform transform hover:scale-105 duration-300"
                 >
                     View Project
@@ -63,7 +65,7 @@ const Project: React.FC = () => {
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-b from-teal-100 to-cyan-300 py-10">
+        <div className="min-h-screen bg-gray-100 py-10">
             <div className="container mx-auto px-4">
                 {/* Our Projects Section */}
                 <h1 className="text-4xl font-bold text-teal-600 text-center mb-4">Our Projects</h1>

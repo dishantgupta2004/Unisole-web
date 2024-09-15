@@ -45,9 +45,9 @@ const Donate: React.FC = () => {
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-b from-teal-100 to-cyan-300 py-10 px-4 sm:px-6 lg:px-8">
+        <div className="min-h-screen bg-gray-100 py-10 px-4 sm:px-6 lg:px-8">
             {/* Banner Section */}
-            <div className="bg-teal-600 text-white text-center py-16 mb-8 rounded-lg">
+            <div className="bg-teal-600 text-white text-center py-12 mb-6 rounded-lg">
                 <h1 className="text-3xl sm:text-4xl font-bold">Support Our Mission</h1>
                 <p className="mt-4 text-base sm:text-lg">Your generous donation helps us make a difference in the lives of many.</p>
             </div>

@@ -3,42 +3,63 @@ import { FaLinkedin, FaInstagram } from 'react-icons/fa';
 const teamMembers = [
     {
         name: 'Ajay Mokta',
-        role: 'Project Manager',
+        role: 'CEO & Founder',
         image: '/photo1.jpg',
         linkedin: 'https://www.linkedin.com/in/ajay-mokta-ab9b28247?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
         instagram: 'https://www.instagram.com/ajay.mokta?igsh=bGZmc3RzanFram9s'
     },
     {
         name: 'Shabd Patel',
-        role: 'Lead Developer',
+        role: 'CTO & Lead Developer',
         image: '/photo2.jpg',
-        linkedin: 'https://www.linkedin.com/in/shabdpatel',
+        linkedin: 'https://www.linkedin.com/in/shabdpatel8757/',
         instagram: 'https://www.instagram.com/shabdpatel'
     },
     {
         name: 'Nishant Prakhar',
-        role: 'UI/UX Designer',
+        role: 'Machenical Lead',
         image: '/photo3.jpg',
         linkedin: 'https://www.linkedin.com/in/nishant-prakhar?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
         instagram: 'https://www.instagram.com/nishant.prakhar?igsh=ZW81MHRvOWcwbWRj'
     },
     {
         name: 'Piyush Keshari',
-        role: 'Frontend Developer',
+        role: 'Machenical Lead',
         image: '/photo4.jpg',
         linkedin: 'https://www.linkedin.com/in/piyush-keshri-22156025a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
         instagram: 'https://www.instagram.com/piyushkeshri442?igsh=eHZ0bDlvdHZ6ZWVm'
     },
     {
+        name: 'Kushal Kesharwani',
+        role: 'ML Engineer',
+        image: '/photo6.jpg',
+        linkedin: 'https://in.linkedin.com/in/kushal-kesharwani-49000525b',
+        instagram: '#'
+    },
+    {
+        name: 'Dishant Gupta',
+        role: 'Chief Engineer',
+        image: '/photo8.jpeg',
+        linkedin: 'https://www.linkedin.com/in/dishant-gupta-44067926a/',
+        instagram: 'https://www.instagram.com/dishantgupta20?utm_source=qr&igsh=dHcxMHgxYTJqODU0'
+    },
+    {
+        name: 'Khushi',
+        role: 'Client Executive',
+        image: '/photo9.jpeg',
+        linkedin: '#',
+        instagram: 'https://www.instagram.com/khushi_yadav.19?igsh=MTEzaDlza2JlaTY1Nw=='
+    },
+    {
         name: 'Ayush Sharma',
-        role: 'Frontend Developer',
-        image: '',
-        linkedin: 'https://www.linkedin.com/in/ayushsharma',
-        instagram: 'https://www.instagram.com/ayushsharma'
+        role: 'Advisor',
+        image: '/photo7.jpeg',
+        linkedin: 'https://www.linkedin.com/in/ayush-kumar-sharma-337b0631b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
+        instagram: 'https://www.instagram.com/_ayu.sh1?igsh=MXEzOTNyNTFpY2xxMg=='
     },
     {
         name: 'Sanchit Mittal',
-        role: 'Frontend Developer',
+        role: 'Tech & Content Lead',
         image: '/photo5.jpg',
         linkedin: 'https://www.linkedin.com/in/sanchit-mittal-041a3b28b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
         instagram: 'https://www.instagram.com/sanchit068?igsh=MW5lMnA5Y3V6c3Bhag=='

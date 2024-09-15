@@ -5,7 +5,7 @@ const Event: React.FC = () => {
     const images = ['e1.jpg', 'e2.jpg', 'e3.jpg', 'e4.jpg', 'e5.jpg', 'e6.jpg'];
 
     return (
-        <div className="py-10 bg-slate-200 text-center">
+        <div className="py-10 bg-gray-100 text-center">
             <h2 className="mt-8 font-retro text-darkBrown mb-4 text-3xl sm:text-4xl lg:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-teal-600 to-cyan-900 font-bold">
                 Our Events
             </h2>
@@ -18,15 +18,15 @@ const Event: React.FC = () => {
                 {images.map((imgSrc, index) => (
                     <div
                         key={index}
-                        className="album-item p-2 border-4 border-gray-100 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+                        className="album-item p-4 bg-white border-4 border-gray-200 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300"
                     >
                         <img
                             src={`/${imgSrc}`}
                             alt={`Event ${index + 1}`}
                             className="w-full h-48 sm:h-64 object-cover rounded-md filter-sepia hover:filter-none transition-all duration-500"
                         />
-                        <p className="mt-2 text-xs sm:text-sm text-darkBrown font-retro text-center">
-                            School Visit {index + 1}
+                        <p className="mt-4 font-medium sm:text-base text-slate-600 font-retro text-center">
+                            Guidance Seminar {index + 1}
                         </p>
                     </div>
                 ))}

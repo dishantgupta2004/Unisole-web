@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
                     <div>
                         <h2 className="text-lg font-semibold mb-4">About Us</h2>
                         <p className="text-gray-400">
-                            Unisole is a digital learning platform that offers expert mentorship to young individuals seeking career guidance. The platform focuses on enhancing technological and intellectual skills, helping users reach their full potential.
+                            Unisole is a digital learning platform that offers expert mentorship and AI-driven projects to young individuals seeking career guidance. The platform focuses on enhancing technological and intellectual skills while providing hands-on experience with cutting-edge AI technologies, helping users reach their full potential.
                         </p>
                     </div>
 
@@ -40,25 +40,37 @@ const Footer: React.FC = () => {
                     {/* Contact Information */}
                     <div>
                         <h2 className="text-lg font-semibold mb-4">Contact Us</h2>
-                        <p className="text-gray-400 mb-2">NIT Hamirpur, Hamirpur, Himachal Pradesh(H.P.)</p>
-                        <p className="text-gray-400 mb-2">Phone: +91-8757489128</p>
-                        <p className="text-gray-400 mb-2">Email: shabdpatel0@gmail.com</p>
+                        <p className="text-gray-400 mb-2">NIT Hamirpur, Hamirpur, Himachal Pradesh (H.P.)</p>
+                        <p className="text-gray-400 mb-2">Phone: +91-7876471141</p>
+                        <p className="text-gray-400 mb-2">Email: unisole.empower@gmail.com</p>
+                        <div className="mt-4">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1906.1353670087349!2d76.52547978263773!3d31.707591803778712!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3904d414dbcbe5a9%3A0xc507ee79945d6bd6!2sPhysics%20Department!5e0!3m2!1sen!2sin!4v1726432030752!5m2!1sen!2sin"
+                                width="100%"
+                                height="200"
+                                style={{ border: 0 }}
+                                allowFullScreen
+                                loading="lazy"
+                                referrerPolicy="no-referrer-when-downgrade"
+                                className="mt-4 rounded-lg"
+                            />
+                        </div>
                     </div>
 
                     {/* Social Media Links */}
                     <div>
                         <h2 className="text-lg font-semibold mb-4">Follow Us</h2>
                         <div className="flex space-x-4">
-                            <a href="https://facebook.com" className="hover:text-teal-400" aria-label="Facebook">
+                            <a href="https://www.facebook.com/share/BpxwCa1JGzV9vS5g/?mibextid=qi2Omg" className="hover:text-teal-400" aria-label="Facebook">
                                 <FaFacebookF />
                             </a>
-                            <a href="https://twitter.com" className="hover:text-teal-400" aria-label="Twitter">
+                            <a href="https://x.com/ajaymokta294552?t=y_3WRA1zvJhIl8WgmptwqA&s=08" className="hover:text-teal-400" aria-label="Twitter">
                                 <FaTwitter />
                             </a>
-                            <a href="https://instagram.com" className="hover:text-teal-400" aria-label="Instagram">
+                            <a href="https://www.instagram.com/unisole_empower?igsh=MTQ3d2F3bTR4ZW5oZQ==" className="hover:text-teal-400" aria-label="Instagram">
                                 <FaInstagram />
                             </a>
-                            <a href="https://linkedin.com" className="hover:text-teal-400" aria-label="LinkedIn">
+                            <a href="https://www.linkedin.com/in/unisole-empower-250030320/" className="hover:text-teal-400" aria-label="LinkedIn">
                                 <FaLinkedinIn />
                             </a>
                         </div>

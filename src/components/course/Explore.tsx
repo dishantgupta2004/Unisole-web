@@ -69,7 +69,7 @@ const Explore: React.FC = () => {
     };
 
     return (
-        <div className="px-6 py-8 bg-white">
+        <div className="px-6 py-8 bg-gray-100">
             {/* Title */}
             <h1 className="text-4xl mt-12 font-bold text-teal-600">Explore</h1>
 
@@ -98,7 +98,7 @@ const Explore: React.FC = () => {
             {courses.map((course, index) => (
                 <div
                     key={index}
-                    className="mt-6 bg-teal-100 p-6 rounded-lg shadow-lg flex justify-between items-center cursor-pointer"
+                    className="mt-6 bg-teal-200 p-6 rounded-lg shadow-lg flex justify-between items-center cursor-pointer"
                     onClick={() => openModal(course)}
                 >
                     <div>
