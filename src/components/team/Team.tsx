@@ -13,18 +13,18 @@ const teamMembers = [
         role: 'CTO & Lead Developer',
         image: '/photo2.jpg',
         linkedin: 'https://www.linkedin.com/in/shabdpatel8757/',
-        instagram: 'https://www.instagram.com/shabdpatel'
+        instagram: 'https://instagram.com/shabd_patel_?igshid=ZDdkNTZiNTM='
     },
     {
         name: 'Nishant Prakhar',
-        role: 'Machenical Lead',
+        role: 'Mechanical Lead',
         image: '/photo3.jpg',
         linkedin: 'https://www.linkedin.com/in/nishant-prakhar?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
         instagram: 'https://www.instagram.com/nishant.prakhar?igsh=ZW81MHRvOWcwbWRj'
     },
     {
         name: 'Piyush Keshari',
-        role: 'Machenical Lead',
+        role: 'Mechanical Lead',
         image: '/photo4.jpg',
         linkedin: 'https://www.linkedin.com/in/piyush-keshri-22156025a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
         instagram: 'https://www.instagram.com/piyushkeshri442?igsh=eHZ0bDlvdHZ6ZWVm'
