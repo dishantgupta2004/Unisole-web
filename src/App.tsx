@@ -15,6 +15,7 @@ import Donate from './components/donate/Donate';
 import Blog from './components/blog/Blog';
 import Footer from './components/footer/Footer';
 import Shadowpage from './components/shadowpage/Shadowpage';
+import PhoneAuth from './components/login/PhoneAuth';
 
 const App: React.FC = () => {
   return (
@@ -47,6 +48,7 @@ const App: React.FC = () => {
         <Route path="/project" element={<Project />} />
         <Route path="/donate" element={<Donate />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/phone-auth" element={<PhoneAuth />} />
         <Route path="*" element={<div>404 - Page Not Found</div>} />
       </Routes>
     </Router>
