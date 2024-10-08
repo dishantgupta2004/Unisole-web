@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { RecaptchaVerifier, signInWithPhoneNumber } from 'firebase/auth';
-import { auth } from '../../firebase';
+import { RecaptchaVerifier, signInWithPhoneNumber, PhoneAuthProvider, signInWithCredential } from 'firebase/auth';
+import { auth } from '../../firebase'; // Ensure correct Firebase setup
 import { useNavigate } from 'react-router-dom';
 
 const PhoneAuth: React.FC = () => {
@@ -10,6 +10,7 @@ const PhoneAuth: React.FC = () => {
     const [recaptchaInitialized, setRecaptchaInitialized] = useState(false);
     const navigate = useNavigate();
 
+    // Initialize recaptcha once
     const initializeRecaptcha = () => {
         if (!recaptchaInitialized) {
             window.recaptchaVerifier = new RecaptchaVerifier(
@@ -26,6 +27,7 @@ const PhoneAuth: React.FC = () => {
         }
     };
 
+    // Function to send OTP
     const sendOtp = async () => {
         initializeRecaptcha();
         const appVerifier = window.recaptchaVerifier;
@@ -39,10 +41,11 @@ const PhoneAuth: React.FC = () => {
         }
     };
 
+    // Function to verify OTP
     const verifyOtp = async () => {
-        const credential = window.firebase.auth.PhoneAuthProvider.credential(verificationId, otp);
         try {
-            await auth.signInWithCredential(credential);
+            const credential = PhoneAuthProvider.credential(verificationId, otp);
+            await signInWithCredential(auth, credential);
             alert('Phone authentication successful');
             navigate('/user-profile'); // Redirect to user profile on success
         } catch (error) {
@@ -58,7 +61,7 @@ const PhoneAuth: React.FC = () => {
                 className="hidden md:block w-1/3 bg-center bg-no-repeat"
                 style={{
                     backgroundImage: 'url("/banner.png")',
-                    backgroundSize: 'contain', // Ensures the entire image is displayed
+                    backgroundSize: 'contain',
                     padding: '2rem',
                     marginLeft: '8rem'
                 }}
