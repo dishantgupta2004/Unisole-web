@@ -1,6 +1,5 @@
-// Import Firebase services
 import { initializeApp } from 'firebase/app';
-import { getAuth, GoogleAuthProvider, signInWithEmailAndPassword, RecaptchaVerifier, signInWithPhoneNumber } from 'firebase/auth';
+import { getAuth, GoogleAuthProvider, RecaptchaVerifier, signInWithPhoneNumber } from 'firebase/auth';
 
 // Firebase configuration
 const firebaseConfig = {
@@ -19,8 +18,5 @@ const app = initializeApp(firebaseConfig);
 // Get Auth instance
 const auth = getAuth(app);
 
-// Initialize Google Auth provider
-const provider = new GoogleAuthProvider();
-
 // Export auth and other utilities for usage in other components
-export { auth, provider, signInWithEmailAndPassword, RecaptchaVerifier, signInWithPhoneNumber };
+export { auth, GoogleAuthProvider, RecaptchaVerifier, signInWithPhoneNumber };

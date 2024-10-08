@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { RecaptchaVerifier, signInWithPhoneNumber, PhoneAuthProvider, signInWithCredential } from 'firebase/auth';
-import { auth } from '../../firebase'; // Ensure correct Firebase setup
+import { auth } : { auth: auth } from '../../firebase'; // Ensure correct Firebase setup
 import { useNavigate } from 'react-router-dom';
 
 // Extend the Window interface to include recaptchaVerifier
@@ -28,7 +28,7 @@ const PhoneAuth: React.FC = () => {
                         console.log('Recaptcha verified!');
                     },
                 },
-                auth // Ensure auth is of type Auth
+                auth as Auth // Cast auth to Auth
             );
             setRecaptchaInitialized(true);
         }
