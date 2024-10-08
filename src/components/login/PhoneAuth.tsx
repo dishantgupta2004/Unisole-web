@@ -1,7 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { RecaptchaVerifier, signInWithPhoneNumber, PhoneAuthProvider, signInWithCredential } from 'firebase/auth';
 import { auth } from '../../firebase'; // Ensure correct Firebase setup
 import { useNavigate } from 'react-router-dom';
+
+// Extend the Window interface to include recaptchaVerifier
+declare global {
+    interface Window {
+        recaptchaVerifier: RecaptchaVerifier;
+    }
+}
 
 const PhoneAuth: React.FC = () => {
     const [phoneNumber, setPhoneNumber] = useState<string>('');
@@ -17,11 +24,11 @@ const PhoneAuth: React.FC = () => {
                 'recaptcha-container',
                 {
                     size: 'invisible',
-                    callback: (response: any) => {
+                    callback: () => {
                         console.log('Recaptcha verified!');
                     },
                 },
-                auth
+                auth // Ensure `auth` is correctly passed here
             );
             setRecaptchaInitialized(true);
         }
