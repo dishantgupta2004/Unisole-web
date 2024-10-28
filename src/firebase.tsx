@@ -18,5 +18,8 @@ const app = initializeApp(firebaseConfig);
 // Get Auth instance
 const auth = getAuth(app);
 
-// Export auth and other utilities for usage in other components
-export { auth, GoogleAuthProvider, RecaptchaVerifier, signInWithPhoneNumber };
+// Create an instance of GoogleAuthProvider
+const provider = new GoogleAuthProvider();
+
+// Export auth and provider
+export { auth, provider, RecaptchaVerifier, signInWithPhoneNumber };
