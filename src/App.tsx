@@ -16,6 +16,7 @@ import Blog from './components/blog/Blog';
 import Footer from './components/footer/Footer';
 import Shadowpage from './components/shadowpage/Shadowpage';
 import PhoneAuth from './components/login/PhoneAuth';
+import Certificate from './components/certificate/Certificate';
 
 const App: React.FC = () => {
   return (
@@ -40,6 +41,7 @@ const App: React.FC = () => {
         <Route path='/about' element={<About />} />
         <Route path='/announcement' element={<Announcement />} />
         <Route path='/event' element={<Event />} />
+        <Route path='/certificate' element={<Certificate />} />
         <Route path='/course' element={<Course />} />
         <Route path="/login" element={<Login />} />
         <Route path="/user-profile" element={<UserProfile />} />
