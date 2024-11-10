@@ -34,6 +34,9 @@ const Footer: React.FC = () => {
                             <li className="mb-2">
                                 <a href="/event" className="hover:text-white">Events</a>
                             </li>
+                            <li className="mb-2">
+                                <a href="/certificate" className="hover:text-white">Events</a>
+                            </li>
                         </ul>
                     </div>
 
