@@ -100,11 +100,14 @@ const CoursePage: React.FC = () => {
                                     <p className="text-gray-700 mt-2">{course.description}</p>
                                 </div>
                                 <div className="flex flex-col items-end">
-                                    <p className="text-lg text-teal-800 font-semibold">Free</p>
+                                    {course.title === "Python and Generative AI Comprehensive Course" ? (
+                                        <p className="text-lg text-teal-800 font-semibold">₹299</p>
+                                    ) : (
+                                        <p className="text-lg text-teal-800 font-semibold">Free</p>
+                                    )}
                                     {course.oldPrice && (
                                         <p className="text-xl text-teal-600 font-semibold line-through">{course.oldPrice}</p>
                                     )}
-                                    {/* Updated Button */}
                                     <button className="mt-2 px-3 py-1 sm:px-4 sm:py-2 text-base sm:text-lg bg-teal-600 text-white rounded-full flex items-center bg-gradient-to-r from-teal-600 to-cyan-900 justify-center hover:bg-teal-700 transform hover:scale-90 transition-transform duration-300">
                                         Enroll
                                     </button>
@@ -112,6 +115,7 @@ const CoursePage: React.FC = () => {
                             </div>
                         ))}
                     </div>
+
 
                     {/* "More Courses" Button */}
                     <div className="flex justify-center mt-8">
