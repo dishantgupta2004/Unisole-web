@@ -16,20 +16,6 @@ const teamMembers = [
         instagram: 'https://instagram.com/shabd_patel_?igshid=ZDdkNTZiNTM='
     },
     {
-        name: 'Nishant Prakhar',
-        role: 'Mechanical Lead',
-        image: '/photo3.jpg',
-        linkedin: 'https://www.linkedin.com/in/nishant-prakhar?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
-        instagram: 'https://www.instagram.com/nishant.prakhar?igsh=ZW81MHRvOWcwbWRj'
-    },
-    {
-        name: 'Piyush Keshari',
-        role: 'Mechanical Lead',
-        image: '/photo4.jpg',
-        linkedin: 'https://www.linkedin.com/in/piyush-keshri-22156025a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
-        instagram: 'https://www.instagram.com/piyushkeshri442?igsh=eHZ0bDlvdHZ6ZWVm'
-    },
-    {
         name: 'Kushal Kesharwani',
         role: 'ML Engineer',
         image: '/photo6.jpg',
@@ -56,13 +42,6 @@ const teamMembers = [
         image: '/photo7.jpeg',
         linkedin: 'https://www.linkedin.com/in/ayush-kumar-sharma-337b0631b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
         instagram: 'https://www.instagram.com/_ayu.sh1?igsh=MXEzOTNyNTFpY2xxMg=='
-    },
-    {
-        name: 'Sanchit Mittal',
-        role: 'Tech & Content Lead',
-        image: '/photo5.jpg',
-        linkedin: 'https://www.linkedin.com/in/sanchit-mittal-041a3b28b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
-        instagram: 'https://www.instagram.com/sanchit068?igsh=MW5lMnA5Y3V6c3Bhag=='
     },
 ];
 

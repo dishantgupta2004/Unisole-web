@@ -1,15 +1,15 @@
 [
     {
-        "title": "General Mathematics Course",
-        "description": "In collaboration with the National Institute of Technology Hamirpur. Covers basic arithmetic, algebra, geometry, and statistics, and prepares you for exams like CSAT, Army, Police, and Railways.",
+        "title": "Python and Generative AI Comprehensive Course",
+        "description": "Master Python programming and explore advanced Generative AI techniques. Learn Langchain, Huggingface, and build real-world AI applications, including chatbots and content generators.",
         "details": [
-            "In collaboration with NIT Hamirpur",
-            "CSAT, Army, Police, and Railways",
-            "Basic arithmetic to advanced topics"
+            "Introduction to Python Programming",
+            "Advanced Generative AI techniques with Langchain and Huggingface",
+            "Practical AI Application Development with Deployment Strategies"
         ],
-        "price": "₹599",
-        "oldPrice": "₹599",
-        "image": "/maths.png"
+        "price": "₹299",
+        "oldPrice": "₹1999",
+        "image": "/python-ai.png"
     },
     {
         "title": "Advanced AI Course",
@@ -34,5 +34,17 @@
         "price": "₹599",
         "oldPrice": "₹799",
         "image": "/python.png"
+    },
+    {
+        "title": "General Mathematics Course",
+        "description": "In collaboration with the National Institute of Technology Hamirpur. Covers basic arithmetic, algebra, geometry, and statistics, and prepares you for exams like CSAT, Army, Police, and Railways.",
+        "details": [
+            "In collaboration with NIT Hamirpur",
+            "CSAT, Army, Police, and Railways",
+            "Basic arithmetic to advanced topics"
+        ],
+        "price": "₹599",
+        "oldPrice": "₹599",
+        "image": "/maths.png"
     }
 ]

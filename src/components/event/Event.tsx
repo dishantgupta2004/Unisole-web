@@ -2,7 +2,7 @@ import React from 'react';
 
 const Event: React.FC = () => {
     // Array of image sources for the gallery
-    const images = ['e1.jpg', 'e2.jpg', 'e3.jpg', 'e4.jpg', 'e5.jpg', 'e6.jpg'];
+    const images = ['news2.png', 'news3.png', 'e1.jpg', 'e2.jpg', 'e3.jpg', 'e4.jpg', 'e5.jpg', 'e6.jpg'];
 
     return (
         <div className="py-10 bg-gray-100 text-center">
@@ -22,11 +22,11 @@ const Event: React.FC = () => {
                     >
                         <img
                             src={`/${imgSrc}`}
-                            alt={`Event ${index + 1}`}
+                            alt={index === 0 ? 'News Article Mention' : index === 1 ? 'Nasa App Challenge project news article' : `Event ${index}`}
                             className="w-full h-48 sm:h-64 object-cover rounded-md filter-sepia hover:filter-none transition-all duration-500"
                         />
                         <p className="mt-4 font-medium sm:text-base text-slate-600 font-retro text-center">
-                            Guidance Seminar {index + 1}
+                            {index === 0 ? 'News Article Mention' : index === 1 ? 'Nasa App Challenge project news article' : `Guidance Seminar ${index}`}
                         </p>
                     </div>
                 ))}
@@ -36,3 +36,4 @@ const Event: React.FC = () => {
 };
 
 export default Event;
+
