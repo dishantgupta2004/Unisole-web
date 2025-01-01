@@ -1,13 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useNavigate } from 'react-router-dom';
+
+interface Course {
+    title: string;
+    image: string;
+    details: string[];
+    description: string;
+    oldPrice?: string;
+}
 
 const Explore: React.FC = () => {
     const [courses, setCourses] = useState<Course[]>([]);
-    const navigate = useNavigate(); // Initialize useNavigate
+    const navigate = useNavigate();
 
     useEffect(() => {
         // Fetch courses data from JSON file
-        fetch('/courses.json') // Ensure this path is correct relative to the public directory
+        fetch('/courses.json')
             .then(response => response.json())
             .then(data => setCourses(data))
             .catch(error => console.error('Error fetching course data:', error));
@@ -28,7 +36,7 @@ const Explore: React.FC = () => {
                         <h2 className="text-xl font-semibold mb-4">{course.title}</h2>
                         <img src={course.image} alt={`${course.title} Icon`} className="mb-4 h-12" />
                         <ul className="list-disc ml-4 space-y-2">
-                            {course.details.map((detail, i) => (
+                            {course.details.map((detail: string, i: number) => (
                                 <li key={i}>{detail}</li>
                             ))}
                         </ul>
@@ -53,10 +61,9 @@ const Explore: React.FC = () => {
                         {course.oldPrice && (
                             <p className="text-xl text-teal-600 font-semibold line-through">{course.oldPrice}</p>
                         )}
-                        {/* Conditional Enroll Button */}
                         {(course.title === 'Python and Generative AI Comprehensive Course') && (
                             <button
-                                onClick={() => navigate('/enroll-form')} // Navigate to enroll form
+                                onClick={() => navigate('/enroll-form')}
                                 className="mt-2 px-6 py-2 bg-gradient-to-r from-teal-600 to-cyan-900 text-white rounded-full font-bold text-lg flex items-center justify-center hover:bg-teal-700 transform hover:scale-105 transition-transform duration-300"
                             >
                                 Enroll
