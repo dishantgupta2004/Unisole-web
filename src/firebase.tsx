@@ -1,4 +1,5 @@
 import { initializeApp } from 'firebase/app';
+import { getFirestore, collection, addDoc } from 'firebase/firestore';
 import { getAuth, GoogleAuthProvider, RecaptchaVerifier, signInWithPhoneNumber } from 'firebase/auth';
 
 // Firebase configuration
@@ -14,6 +15,8 @@ const firebaseConfig = {
 
 // Initialize Firebase app
 const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
 
 // Get Auth instance
 const auth = getAuth(app);
@@ -22,4 +25,4 @@ const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 
 // Export auth and provider
-export { auth, provider, RecaptchaVerifier, signInWithPhoneNumber };
+export { auth, provider, RecaptchaVerifier, signInWithPhoneNumber, db, collection, addDoc };

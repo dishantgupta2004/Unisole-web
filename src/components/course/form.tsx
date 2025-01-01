@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { db } from '../../firebase'; // Adjust the path based on your project structure
+import { addDoc, collection } from 'firebase/firestore';
 
 const Form: React.FC = () => {
     const [step, setStep] = useState(1);
@@ -8,10 +10,34 @@ const Form: React.FC = () => {
     const [address, setAddress] = useState('');
     const [agreeTerms, setAgreeTerms] = useState(false);
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        console.log('Form submitted:', { name, email, phone, address, agreeTerms });
-        // Add form submission logic here
+
+        if (!agreeTerms) {
+            alert("You must agree to the terms and conditions.");
+            return;
+        }
+
+        try {
+            const docRef = await addDoc(collection(db, 'registrations'), {
+                name,
+                email,
+                phone,
+                address,
+                agreeTerms,
+                timestamp: new Date()
+            });
+            alert(`Form submitted successfully! Document ID: ${docRef.id}`);
+            setStep(1); // Reset form
+            setName('');
+            setEmail('');
+            setPhone('');
+            setAddress('');
+            setAgreeTerms(false);
+        } catch (error) {
+            console.error('Error adding document: ', error);
+            alert('Error submitting form. Please try again.');
+        }
     };
 
     const validateStep = () => {
@@ -20,7 +46,7 @@ const Form: React.FC = () => {
         } else if (step === 2) {
             return phone.trim() !== '' && address.trim() !== '';
         }
-        return true; // No additional checks for the final step
+        return true;
     };
 
     const nextStep = () => {
@@ -48,7 +74,6 @@ const Form: React.FC = () => {
 
                 {step === 1 && (
                     <>
-                        {/* Full Name */}
                         <div className="mb-6">
                             <label htmlFor="name" className="block text-gray-700 font-semibold mb-2">
                                 Full Name
@@ -63,8 +88,6 @@ const Form: React.FC = () => {
                                 required
                             />
                         </div>
-
-                        {/* Email */}
                         <div className="mb-6">
                             <label htmlFor="email" className="block text-gray-700 font-semibold mb-2">
                                 Email Address
@@ -79,11 +102,10 @@ const Form: React.FC = () => {
                                 required
                             />
                         </div>
-
                         <button
                             type="button"
                             onClick={nextStep}
-                            className="w-full mb-4 px-8 py-3 bg-gradient-to-r from-teal-600 to-cyan-900 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-transform duration-300"
+                            className="w-full px-8 py-3 bg-gradient-to-r from-teal-600 to-cyan-900 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-transform duration-300"
                         >
                             Next
                         </button>
@@ -92,7 +114,6 @@ const Form: React.FC = () => {
 
                 {step === 2 && (
                     <>
-                        {/* Phone */}
                         <div className="mb-6">
                             <label htmlFor="phone" className="block text-gray-700 font-semibold mb-2">
                                 Phone Number
@@ -107,8 +128,6 @@ const Form: React.FC = () => {
                                 required
                             />
                         </div>
-
-                        {/* Address */}
                         <div className="mb-6">
                             <label htmlFor="address" className="block text-gray-700 font-semibold mb-2">
                                 Address
@@ -123,7 +142,6 @@ const Form: React.FC = () => {
                                 required
                             />
                         </div>
-
                         <button
                             type="button"
                             onClick={prevStep}
@@ -143,7 +161,6 @@ const Form: React.FC = () => {
 
                 {step === 3 && (
                     <>
-                        {/* Terms and Conditions */}
                         <div className="mb-6">
                             <label htmlFor="terms" className="inline-flex items-center">
                                 <input
@@ -152,16 +169,10 @@ const Form: React.FC = () => {
                                     checked={agreeTerms}
                                     onChange={(e) => setAgreeTerms(e.target.checked)}
                                     className="w-4 h-4 border rounded focus:outline-none focus:ring-2 focus:ring-teal-500"
-                                    required
                                 />
-                                <span className="ml-2 text-gray-700 font-semibold">I agree to the terms and conditions</span>
+                                <span className="ml-2 text-gray-700">I agree to the terms and conditions.</span>
                             </label>
                         </div>
-
-                        <p className="text-center text-gray-700 mb-6">
-                            The enrollment fee is ₹299.
-                        </p>
-
                         <button
                             type="button"
                             onClick={prevStep}
@@ -173,7 +184,7 @@ const Form: React.FC = () => {
                             type="submit"
                             className="w-full px-8 py-3 bg-gradient-to-r from-teal-600 to-cyan-900 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-transform duration-300"
                         >
-                            Pay ₹299 & Submit
+                            Submit
                         </button>
                     </>
                 )}
