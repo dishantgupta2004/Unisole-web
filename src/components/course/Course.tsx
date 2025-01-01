@@ -19,6 +19,8 @@ interface CourseModalProps {
 
 // Modal Component
 const CourseModal: React.FC<CourseModalProps> = ({ course, isOpen, onClose }) => {
+    const navigate = useNavigate(); // Add useNavigate for navigation
+
     if (!isOpen || !course) return null;
 
     return (
@@ -40,6 +42,16 @@ const CourseModal: React.FC<CourseModalProps> = ({ course, isOpen, onClose }) =>
                         <li key={index}>{detail}</li>
                     ))}
                 </ul>
+
+                {/* Enroll Button for Specific Courses */}
+                {(course.title === 'Python and Generative AI Comprehensive Course') && (
+                    <button
+                        onClick={() => navigate('/enroll-form')} // Navigate to form page
+                        className="w-full py-3 shadow-md text-lg font-bold bg-teal-600 text-white rounded-full flex items-center bg-gradient-to-r from-teal-600 to-cyan-900 justify-center hover:bg-teal-700 transform hover:scale-90 transition-transform duration-300"
+                    >
+                        Enroll
+                    </button>
+                )}
             </div>
         </div>
     );
@@ -108,8 +120,8 @@ const CoursePage: React.FC = () => {
                                     {course.oldPrice && (
                                         <p className="text-xl text-teal-600 font-semibold line-through">{course.oldPrice}</p>
                                     )}
-                                    <button className="mt-2 px-3 py-1 sm:px-4 sm:py-2 text-base sm:text-lg bg-teal-600 text-white rounded-full flex items-center bg-gradient-to-r from-teal-600 to-cyan-900 justify-center hover:bg-teal-700 transform hover:scale-90 transition-transform duration-300">
-                                        Enroll
+                                    <button className="mt-2 px-3 py-1 sm:px-2 sm:py-2 text-base sm:text-lg bg-teal-600 text-white rounded-full flex items-center bg-gradient-to-r from-teal-600 to-cyan-900 justify-center hover:bg-teal-700 transform hover:scale-90 transition-transform duration-300">
+                                        Details
                                     </button>
                                 </div>
                             </div>
