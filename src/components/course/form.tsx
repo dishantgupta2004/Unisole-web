@@ -217,7 +217,7 @@ const Form: React.FC = () => {
                             type="submit"
                             className="w-full px-8 py-3 bg-gradient-to-r from-teal-600 to-cyan-900 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-transform duration-300"
                         >
-                            Submit
+                            Proceed to Payment
                         </button>
                     </>
                 )}
