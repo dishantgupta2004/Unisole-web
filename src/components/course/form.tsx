@@ -10,14 +10,8 @@ const Form: React.FC = () => {
     const [address, setAddress] = useState('');
     const [agreeTerms, setAgreeTerms] = useState(false);
 
-    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
-
-        if (!agreeTerms) {
-            alert("You must agree to the terms and conditions.");
-            return;
-        }
-
+    const handlePaymentSuccess = async (paymentResponse: any) => {
+        // If payment is successful, submit the form data to Firebase
         try {
             const docRef = await addDoc(collection(db, 'registrations'), {
                 name,
@@ -25,6 +19,7 @@ const Form: React.FC = () => {
                 phone,
                 address,
                 agreeTerms,
+                paymentId: paymentResponse.razorpay_payment_id,
                 timestamp: new Date()
             });
             alert(`Form submitted successfully! Document ID: ${docRef.id}`);
@@ -38,6 +33,44 @@ const Form: React.FC = () => {
             console.error('Error adding document: ', error);
             alert('Error submitting form. Please try again.');
         }
+    };
+
+    const initiatePayment = () => {
+        // Make sure the Razorpay script is loaded
+        if (typeof window.Razorpay === 'undefined') {
+            alert("Razorpay script failed to load. Please try again.");
+            return;
+        }
+
+        if (!agreeTerms) {
+            alert("You must agree to the terms and conditions.");
+            return;
+        }
+
+        const options = {
+            key: 'rzp_live_7nFwNEzqaAFxLp', // Replace with your Razorpay key
+            amount: 299 * 100, // Amount in paise (299 INR)
+            currency: 'INR',
+            name: 'Enroll in Python and Generative AI',
+            description: 'Course Enrollment Fee',
+            handler: (response: any) => handlePaymentSuccess(response),
+            prefill: {
+                name,
+                email,
+                phone,
+            },
+            theme: {
+                color: '#528FF0',
+            },
+        };
+
+        const razorpay = new window.Razorpay(options);
+        razorpay.open();
+    };
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        initiatePayment(); // Initiate payment when form is submitted
     };
 
     const validateStep = () => {
