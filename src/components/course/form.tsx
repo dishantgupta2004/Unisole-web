@@ -13,7 +13,7 @@ const Form: React.FC = () => {
     const handlePaymentSuccess = async (paymentResponse: any) => {
         // If payment is successful, submit the form data to Firebase
         try {
-            const docRef = await addDoc(collection(db, 'registrations'), {
+            const docRef = await addDoc(collection(db, 'python&generative-ai-registrations'), {
                 name,
                 email,
                 phone,
