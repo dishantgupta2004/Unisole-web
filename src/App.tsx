@@ -21,38 +21,42 @@ import Form from './components/course/form';
 const App: React.FC = () => {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={
-          <div className="min-h-screen flex flex-col">
-            <Navbar />
-            <Homepage />
-            <About />
-            <Announcement />
-            <Course />
-            <Project />
-            <Donate />
-            <Blog />
-            <Event />
-            <Team />
-            <Footer />
-          </div>
-        } />
-        <Route path="/shadowpage" element={<Shadowpage />} />
-        <Route path='/about' element={<About />} />
-        <Route path='/announcement' element={<Announcement />} />
-        <Route path='/event' element={<Event />} />
-        <Route path='/certificate' element={<Certificate />} />
-        <Route path='/course' element={<Course />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/user-profile" element={<UserProfile />} />
-        <Route path="/explore" element={<Explore />} />
-        <Route path="/team" element={<Team />} />
-        <Route path="/project" element={<Project />} />
-        <Route path="/donate" element={<Donate />} />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/enroll-form" element={<Form />} />
-        <Route path="*" element={<div>404 - Page Not Found</div>} />
-      </Routes>
+      {/* Navbar is fixed at the top */}
+      <Navbar />
+      {/* Add a top margin equal to the Navbar's height */}
+      <div className="pt-[64px] min-h-screen flex flex-col">
+        <Routes>
+          <Route path="/" element={
+            <>
+              <Homepage />
+              <About />
+              <Announcement />
+              <Course />
+              <Project />
+              <Donate />
+              <Blog />
+              <Event />
+              <Team />
+            </>
+          } />
+          <Route path="/shadowpage" element={<Shadowpage />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/announcement" element={<Announcement />} />
+          <Route path="/event" element={<Event />} />
+          <Route path="/certificate" element={<Certificate />} />
+          <Route path="/course" element={<Course />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/user-profile" element={<UserProfile />} />
+          <Route path="/explore" element={<Explore />} />
+          <Route path="/team" element={<Team />} />
+          <Route path="/project" element={<Project />} />
+          <Route path="/donate" element={<Donate />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/enroll-form" element={<Form />} />
+          <Route path="*" element={<div>404 - Page Not Found</div>} />
+        </Routes>
+        <Footer />
+      </div>
     </Router>
   );
 };
