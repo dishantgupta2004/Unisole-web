@@ -9,13 +9,11 @@ const Donate: React.FC = () => {
     const [email, setEmail] = useState<string>('');
     const [agreeTerms, setAgreeTerms] = useState<boolean>(false);
 
-    // Handle preset amount selection
     const handleSelectAmount = (amount: number) => {
         setSelectedAmount(amount);
         setCustomAmount('');
     };
 
-    // Handle custom amount input
     const handleCustomAmountChange = (e: ChangeEvent<HTMLInputElement>) => {
         const value = e.target.value;
         if (!isNaN(Number(value)) && Number(value) > 0) {
@@ -24,7 +22,6 @@ const Donate: React.FC = () => {
         }
     };
 
-    // Handle payment success
     const handlePaymentSuccess = async (paymentResponse: any) => {
         try {
             const donationAmount = customAmount ? Number(customAmount) : selectedAmount;
@@ -36,7 +33,6 @@ const Donate: React.FC = () => {
                 timestamp: new Date(),
             });
             alert(`Thank you for your donation! Document ID: ${docRef.id}`);
-            // Reset form
             setSelectedAmount('');
             setCustomAmount('');
             setName('');
@@ -48,7 +44,6 @@ const Donate: React.FC = () => {
         }
     };
 
-    // Initiate Razorpay payment
     const initiatePayment = () => {
         if (!agreeTerms) {
             alert('You must agree to the terms and conditions.');
@@ -62,8 +57,8 @@ const Donate: React.FC = () => {
         }
 
         const options = {
-            key: 'rzp_live_7nFwNEzqaAFxLp', // Replace with your Razorpay key
-            amount: amount * 100, // Convert to paise
+            key: 'rzp_live_7nFwNEzqaAFxLp',
+            amount: amount * 100,
             currency: 'INR',
             name: 'Donation',
             description: 'Thank you for your generosity!',
@@ -81,7 +76,6 @@ const Donate: React.FC = () => {
         razorpay.open();
     };
 
-    // Form submission handler
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         initiatePayment();
@@ -89,13 +83,11 @@ const Donate: React.FC = () => {
 
     return (
         <div className="min-h-screen bg-gray-100 py-10 px-4 sm:px-6 lg:px-8">
-            {/* Banner Section */}
             <div className="bg-teal-600 text-white text-center py-12 mb-6 rounded-lg">
                 <h1 className="text-3xl sm:text-4xl font-bold">Support Our Mission</h1>
                 <p className="mt-4 text-base sm:text-lg">Your generous donation helps us make a difference in the lives of many.</p>
             </div>
 
-            {/* Donation Form */}
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl">
                 <form
                     onSubmit={handleSubmit}
@@ -131,7 +123,7 @@ const Donate: React.FC = () => {
 
                     <div className="mb-6">
                         <label className="block text-gray-700 font-semibold mb-2">Donation Amount</label>
-                        <div className="flex space-x-4">
+                        <div className="flex flex-wrap space-x-2 space-y-2">
                             {[100, 500, 1000, 5000].map((amount) => (
                                 <button
                                     key={amount}
@@ -182,3 +174,4 @@ const Donate: React.FC = () => {
 };
 
 export default Donate;
+
