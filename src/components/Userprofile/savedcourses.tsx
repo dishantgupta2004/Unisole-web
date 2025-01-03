@@ -3,11 +3,6 @@ import { db } from '../../firebase';
 import { collection, query, where, getDocs } from 'firebase/firestore';
 import CourseDetailsPopup from './CourseDetailsPopup';
 
-interface CourseDetailsPopupProps {
-    course: { id: string; thumbnail?: string | undefined; title: string; mentor?: string | undefined; description?: string | undefined; };
-    onClose: () => void;
-}
-
 const SavedCourses = () => {
     const [searchEmail, setSearchEmail] = useState('');
     const [searchPhone, setSearchPhone] = useState('');

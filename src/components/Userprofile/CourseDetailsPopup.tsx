@@ -20,8 +20,7 @@ interface CourseDetailsPopupProps {
     onClose: () => void;
 }
 
-
-const CourseDetailsPopup: React.FC<CourseDetailsPopupProps> = ({ course, onClose }) => {
+const CourseDetailsPopup: React.FC<CourseDetailsPopupProps> = ({ onClose }) => {
     const [lectures, setLectures] = useState<Lecture[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
@@ -182,3 +181,4 @@ const CourseDetailsPopup: React.FC<CourseDetailsPopupProps> = ({ course, onClose
 };
 
 export default CourseDetailsPopup;
+
