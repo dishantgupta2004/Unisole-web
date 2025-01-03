@@ -29,11 +29,10 @@ const SavedCourses = () => {
             const results = querySnapshot.docs.map((doc) => ({
                 id: doc.id,
                 thumbnail: doc.data().thumbnail || '',
-                title: doc.data().title || 'No title',
-                mentor: doc.data().mentor || 'Unknown mentor',
+                title: doc.data().title || 'Python and Generative AI',
+                mentor: doc.data().mentor || 'Ajay Mokta',
                 description: doc.data().description || 'No description available',
             }));
-
 
             setFilteredCourses(results);
         } catch (error) {
@@ -89,7 +88,7 @@ const SavedCourses = () => {
                         {filteredCourses.map((course) => (
                             <div
                                 key={course.id}
-                                className="bg-teal-100 p-4 rounded-lg shadow-lg"
+                                className="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition-transform transform hover:scale-105"
                             >
                                 <img
                                     src={course.thumbnail || '/thumb.webp'}
@@ -98,7 +97,7 @@ const SavedCourses = () => {
                                 />
                                 <h2 className="text-xl font-semibold text-gray-800 mb-2">{course.title}</h2>
                                 <p className="text-gray-600 text-sm mb-2">
-                                    Mentor: {course.mentor || 'Ajay Mokta'}
+                                    Mentor: {course.mentor}
                                 </p>
                                 <p className="text-gray-600 text-sm mb-4">{course.description || 'Learn advanced Python and AI techniques.'}</p>
                                 <ul className="text-gray-600 text-sm mb-4">
