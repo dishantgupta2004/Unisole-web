@@ -3,12 +3,17 @@ import { db } from '../../firebase';
 import { collection, query, where, getDocs } from 'firebase/firestore';
 import CourseDetailsPopup from './CourseDetailsPopup';
 
+interface CourseDetailsPopupProps {
+    course: { id: string; thumbnail?: string | undefined; title: string; mentor?: string | undefined; description?: string | undefined; };
+    onClose: () => void;
+}
+
 const SavedCourses = () => {
     const [searchEmail, setSearchEmail] = useState('');
     const [searchPhone, setSearchPhone] = useState('');
-    const [filteredCourses, setFilteredCourses] = useState<{ id: string; thumbnail?: string; title?: string; mentor?: string; description?: string }[]>([]);
+    const [filteredCourses, setFilteredCourses] = useState<{ id: string; thumbnail?: string | undefined; title: string; mentor?: string | undefined; description?: string | undefined; }[]>([]);
     const [loading, setLoading] = useState(false);
-    const [selectedCourse, setSelectedCourse] = useState<{ id: string; thumbnail?: string; title: string; mentor?: string; description?: string } | null>(null);
+    const [selectedCourse, setSelectedCourse] = useState<{ id: string; thumbnail?: string | undefined; title: string; mentor?: string | undefined; description?: string | undefined; } | null>(null);
 
     const handleSearch = async () => {
         if (!searchEmail.trim() || !searchPhone.trim()) {
@@ -34,6 +39,7 @@ const SavedCourses = () => {
                 description: doc.data().description || 'No description available',
             }));
 
+
             setFilteredCourses(results);
         } catch (error) {
             console.error('Error fetching courses:', error);
@@ -43,7 +49,7 @@ const SavedCourses = () => {
         }
     };
 
-    const openPopup = (course: { id: string; thumbnail?: string; title: string; mentor?: string; description?: string }) => {
+    const openPopup = (course: { id: string; thumbnail?: string | undefined; title: string; mentor?: string | undefined; description?: string | undefined; }) => {
         setSelectedCourse(course);
     };
 
@@ -101,9 +107,9 @@ const SavedCourses = () => {
                                 </p>
                                 <p className="text-gray-600 text-sm mb-4">{course.description || 'Learn advanced Python and AI techniques.'}</p>
                                 <ul className="text-gray-600 text-sm mb-4">
-                                    <li>📌 Introduction to Python Programming</li>
-                                    <li>📌 Advanced Generative AI with Langchain and Huggingface</li>
-                                    <li>📌 Practical AI Development & Deployment</li>
+                                    <li>Introduction to Python Programming</li>
+                                    <li>Advanced Generative AI with Langchain and Huggingface</li>
+                                    <li>Practical AI Development & Deployment</li>
                                 </ul>
                                 <button
                                     onClick={() => openPopup(course)}
@@ -133,3 +139,4 @@ const SavedCourses = () => {
 };
 
 export default SavedCourses;
+

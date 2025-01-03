@@ -10,10 +10,18 @@ interface Lecture {
 }
 
 interface CourseDetailsPopupProps {
+    course: {
+        id: string;
+        thumbnail?: string;
+        title: string;
+        mentor?: string;
+        description?: string;
+    };
     onClose: () => void;
 }
 
-const CourseDetailsPopup: React.FC<CourseDetailsPopupProps> = ({ onClose }) => {
+
+const CourseDetailsPopup: React.FC<CourseDetailsPopupProps> = ({ course, onClose }) => {
     const [lectures, setLectures] = useState<Lecture[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
