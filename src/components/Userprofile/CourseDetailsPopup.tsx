@@ -174,4 +174,3 @@ const CourseDetailsPopup: React.FC<CourseDetailsPopupProps> = ({ onClose }) => {
 };
 
 export default CourseDetailsPopup;
-

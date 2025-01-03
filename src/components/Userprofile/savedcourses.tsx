@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react'; // Add this at the top
+import { useState } from 'react';
 import { db } from '../../firebase';
 import { collection, query, where, getDocs } from 'firebase/firestore';
 import CourseDetailsPopup from './CourseDetailsPopup';
@@ -6,9 +7,10 @@ import CourseDetailsPopup from './CourseDetailsPopup';
 const SavedCourses = () => {
     const [searchEmail, setSearchEmail] = useState('');
     const [searchPhone, setSearchPhone] = useState('');
-    const [filteredCourses, setFilteredCourses] = useState([]);
+    const [filteredCourses, setFilteredCourses] = useState<{ id: string; thumbnail?: string; title: string; mentor?: string; description?: string }[]>([]);
     const [loading, setLoading] = useState(false);
-    const [selectedCourse, setSelectedCourse] = useState(null);
+    const [selectedCourse, setSelectedCourse] = useState<{ id: string; thumbnail?: string; title: string; mentor?: string; description?: string } | null>(null);
+
 
     const handleSearch = async () => {
         if (!searchEmail.trim() || !searchPhone.trim()) {
@@ -40,9 +42,10 @@ const SavedCourses = () => {
         }
     };
 
-    const openPopup = (course) => {
+    const openPopup = (course: { id: string; thumbnail?: string; title: string; mentor?: string; description?: string }) => {
         setSelectedCourse(course);
     };
+
 
     const closePopup = () => {
         setSelectedCourse(null);
