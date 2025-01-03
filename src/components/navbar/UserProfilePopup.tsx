@@ -35,6 +35,11 @@ const UserProfilePopup: React.FC<{ onClose: () => void }> = ({ onClose }) => {
         navigate('/user-profile');
     };
 
+    const handleSavedCoursesClick = () => {
+        onClose();
+        navigate('/savedcourses');
+    };
+
     return (
         <div ref={popupRef} className="absolute top-12 right-0 w-64 bg-slate-100 rounded-lg shadow-lg z-50">
             <div className="p-4">
@@ -51,7 +56,12 @@ const UserProfilePopup: React.FC<{ onClose: () => void }> = ({ onClose }) => {
                     >
                         Profile
                     </li>
-                    <li className="py-2 px-4 hover:bg-gray-200 rounded-lg cursor-pointer">Saved Courses</li>
+                    <li
+                        className="py-2 px-4 hover:bg-gray-200 rounded-lg cursor-pointer"
+                        onClick={handleSavedCoursesClick}
+                    >
+                        Saved Courses
+                    </li>
                     <li className="py-2 px-4 hover:bg-gray-200 rounded-lg cursor-pointer">Contacts</li>
                     <li
                         className="py-2 px-4 hover:bg-gray-200 rounded-lg cursor-pointer"

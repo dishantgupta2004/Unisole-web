@@ -17,6 +17,7 @@ import Footer from './components/footer/Footer';
 import Shadowpage from './components/shadowpage/Shadowpage';
 import Certificate from './components/certificate/Certificate';
 import Form from './components/course/form';
+import SavedCourses from './components/Userprofile/savedcourses';
 
 const App: React.FC = () => {
   return (
@@ -53,6 +54,7 @@ const App: React.FC = () => {
           <Route path="/donate" element={<Donate />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/enroll-form" element={<Form />} />
+          <Route path="/savedcourses" element={<SavedCourses />} />
           <Route path="*" element={<div>404 - Page Not Found</div>} />
         </Routes>
         <Footer />
