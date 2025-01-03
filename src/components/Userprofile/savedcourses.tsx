@@ -54,7 +54,7 @@ const SavedCourses = () => {
     return (
         <div className="flex items-center justify-center min-h-screen bg-gray-100 p-4 md:p-8 lg:p-12">
             <div className="bg-white rounded-lg shadow-md p-6 w-full max-w-3xl md:max-w-5xl lg:max-w-6xl">
-                <h1 className="text-3xl font-bold mb-6 text-teal-600 text-center">Saved Courses</h1>
+                <h1 className="text-3xl font-bold mb-6 text-center">Saved Courses</h1>
 
                 <div className="mb-8">
                     <h2 className="text-xl font-semibold text-gray-700 mb-4">Search for Your Enrolled Course</h2>
@@ -88,7 +88,7 @@ const SavedCourses = () => {
                         {filteredCourses.map((course) => (
                             <div
                                 key={course.id}
-                                className="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition-transform transform hover:scale-105"
+                                className="bg-slate-200 p-6 rounded-lg shadow-lg hover:shadow-2xl transition-transform transform hover:scale-105"
                             >
                                 <img
                                     src={course.thumbnail || '/thumb.webp'}
@@ -97,13 +97,13 @@ const SavedCourses = () => {
                                 />
                                 <h2 className="text-xl font-semibold text-gray-800 mb-2">{course.title}</h2>
                                 <p className="text-gray-600 text-sm mb-2">
-                                    Mentor: {course.mentor}
+                                    Mentor: Ajay Mokta
                                 </p>
                                 <p className="text-gray-600 text-sm mb-4">{course.description || 'Learn advanced Python and AI techniques.'}</p>
                                 <ul className="text-gray-600 text-sm mb-4">
-                                    <li>Introduction to Python Programming</li>
-                                    <li>Advanced Generative AI with Langchain and Huggingface</li>
-                                    <li>Practical AI Development & Deployment</li>
+                                    <li>📌 Introduction to Python Programming</li>
+                                    <li>📌 Advanced Generative AI with Langchain and Huggingface</li>
+                                    <li>📌 Practical AI Development & Deployment</li>
                                 </ul>
                                 <button
                                     onClick={() => openPopup(course)}

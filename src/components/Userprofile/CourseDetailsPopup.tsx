@@ -139,7 +139,7 @@ const CourseDetailsPopup: React.FC<CourseDetailsPopupProps> = ({ onClose }) => {
                                     <img
                                         src={getThumbnail(lecture.video)}
                                         alt="Video Thumbnail"
-                                        className="w-32 h-32 object-cover rounded-lg shadow-md md:w-48 md:h-auto"
+                                        className="w-48 h-48 rounded-lg shadow-md object-cover"
                                     />
                                     <div className="flex flex-col space-y-2 md:space-y-0 md:flex-row md:items-start md:space-x-4">
                                         <div className="flex flex-col space-y-2">
