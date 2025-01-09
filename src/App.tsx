@@ -18,10 +18,13 @@ import Shadowpage from './components/shadowpage/Shadowpage';
 import Certificate from './components/certificate/Certificate';
 import Form from './components/course/form';
 import SavedCourses from './components/Userprofile/savedcourses';
+import ScrollToTop from './components/scrolltotop';
 
 const App: React.FC = () => {
   return (
     <Router>
+      {/* Scroll to top on route change */}
+      <ScrollToTop />
       {/* Navbar is fixed at the top */}
       <Navbar />
       {/* Add a top margin equal to the Navbar's height */}
