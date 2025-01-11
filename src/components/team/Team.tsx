@@ -1,6 +1,14 @@
-import { FaLinkedin, FaInstagram } from 'react-icons/fa';
+import { FaLinkedin, FaInstagram, FaFacebook, FaYoutube } from 'react-icons/fa';
 
 const teamMembers = [
+    {
+        name: 'Lucky Garg',
+        role: 'Brand Ambassador',
+        image: '/ph.jpeg',
+        youtube: 'https://youtube.com/@lkyartline1272?si=rfx3Eku7mhyv7Kth',
+        instagram: 'https://www.instagram.com/lky__artline?igsh=cnd6bmozaDFkcDIz&utm_source=qr',
+        facebook: 'https://www.facebook.com/share/157RwZhHgD/?mibextid=wwXIfr'
+    },
     {
         name: 'Ajay Mokta',
         role: 'CEO & Founder',
@@ -27,7 +35,7 @@ const teamMembers = [
         role: 'Chief Engineer',
         image: '/photo8.jpeg',
         linkedin: 'https://www.linkedin.com/in/dishant-gupta-44067926a/',
-        instagram: 'https://www.instagram.com/dishantgupta20?utm_source=qr&igsh=dHcxMHgxYTJqODU0'
+        instagram: 'https://www.instagram.com/dishantgupta20?utm_source=qr&igsh=dHcxMHhxYTJqODU0'
     },
     {
         name: 'Khushi',
@@ -42,6 +50,20 @@ const teamMembers = [
         image: '/photo7.jpeg',
         linkedin: 'https://www.linkedin.com/in/ayush-kumar-sharma-337b0631b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
         instagram: 'https://www.instagram.com/_ayu.sh1?igsh=MXEzOTNyNTFpY2xxMg=='
+    },
+    {
+        name: 'Shweta Sharma',
+        role: 'Junior Manager',
+        image: '/ph2.jpeg',
+        linkedin: 'https://www.linkedin.com/in/shweta-sharma-35ba61325?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+        instagram: '#'
+    },
+    {
+        name: 'Om Parmar',
+        role: 'Junior Manager',
+        image: '/ph3.jpeg',
+        linkedin: '#',
+        instagram: '#'
     },
 ];
 
@@ -78,6 +100,16 @@ const Team = () => {
                                             <FaInstagram size={24} />
                                         </a>
                                     )}
+                                    {member.facebook && (
+                                        <a href={member.facebook} target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-teal-600">
+                                            <FaFacebook size={24} />
+                                        </a>
+                                    )}
+                                    {member.youtube && (
+                                        <a href={member.youtube} target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-teal-600">
+                                            <FaYoutube size={24} />
+                                        </a>
+                                    )}
                                 </div>
                             </div>
                         </div>
@@ -89,3 +121,4 @@ const Team = () => {
 };
 
 export default Team;
+
