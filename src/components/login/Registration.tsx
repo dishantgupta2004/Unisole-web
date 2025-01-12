@@ -1,32 +1,38 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { auth, provider } from '../../firebase';
-import { signInWithPopup, signInWithEmailAndPassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
 import { FaGoogle } from 'react-icons/fa';
 
-const Login: React.FC = () => {
+const Registration: React.FC = () => {
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
+    const [confirmPassword, setConfirmPassword] = useState<string>('');
     const navigate = useNavigate();
 
-    const handleGoogleLogin = async () => {
+    const handleGoogleSignup = async () => {
         try {
             await signInWithPopup(auth, provider);
-            alert('Login successful');
+            alert('Registration successful');
             navigate('/');
         } catch (error) {
             alert((error as Error).message);
         }
     };
 
-    const handleEmailLogin = async () => {
+    const handleEmailSignup = async () => {
+        if (password !== confirmPassword) {
+            alert('Passwords do not match');
+            return;
+        }
+
         try {
-            await signInWithEmailAndPassword(auth, email, password);
-            alert('Login successful');
-            navigate('/'); // Redirect to user profile on success
+            await createUserWithEmailAndPassword(auth, email, password);
+            alert('Registration successful');
+            navigate('/');
         } catch (error) {
-            console.error('Error during email login: ', error);
-            alert((error as Error).message); // Show the error message
+            console.error('Error during email registration: ', error);
+            alert((error as Error).message);
         }
     };
 
@@ -43,10 +49,10 @@ const Login: React.FC = () => {
                 }}
             ></div>
 
-            {/* Right side with the login form */}
+            {/* Right side with the registration form */}
             <div className="w-full md:w-2/3 flex items-center justify-center">
                 <div className="bg-white p-6 md:p-10 rounded-lg shadow-lg w-full max-w-md">
-                    <h2 className="text-3xl font-bold mb-6 text-center text-gray-700">Login</h2>
+                    <h2 className="text-3xl font-bold mb-6 text-center text-gray-700">Register</h2>
 
                     <div className="space-y-4">
                         <input
@@ -63,31 +69,38 @@ const Login: React.FC = () => {
                             placeholder="Password"
                             className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                         />
+                        <input
+                            type="password"
+                            value={confirmPassword}
+                            onChange={(e) => setConfirmPassword(e.target.value)}
+                            placeholder="Confirm Password"
+                            className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        />
                         <button
                             className="bg-blue-500 text-white w-full py-3 rounded-lg shadow-md hover:bg-blue-600 transition-colors duration-300"
-                            onClick={handleEmailLogin}
+                            onClick={handleEmailSignup}
                         >
-                            Login with Email
+                            Register with Email
                         </button>
                     </div>
 
                     <div className="my-4">
                         <button
                             className="bg-red-500 text-white w-full py-3 rounded-lg shadow-md hover:bg-red-600 transition-colors duration-300 flex items-center justify-center"
-                            onClick={handleGoogleLogin}
+                            onClick={handleGoogleSignup}
                         >
                             <FaGoogle className="mr-2" />
-                            Login with Google
+                            Register with Google
                         </button>
                     </div>
 
                     <div className="text-gray-600 text-center mt-4">
-                        Don't have an account?{' '}
+                        Already have an account?{' '}
                         <span
                             className="text-blue-500 cursor-pointer hover:underline"
-                            onClick={() => navigate('/register')}
+                            onClick={() => navigate('/login')}
                         >
-                            Register here
+                            Login here
                         </span>
                     </div>
                 </div>
@@ -96,4 +109,4 @@ const Login: React.FC = () => {
     );
 };
 
-export default Login;
+export default Registration;

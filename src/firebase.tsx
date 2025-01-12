@@ -1,6 +1,6 @@
 import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, addDoc } from 'firebase/firestore';
-import { getAuth, GoogleAuthProvider, RecaptchaVerifier, signInWithPhoneNumber } from 'firebase/auth';
+import { getAuth, GoogleAuthProvider } from 'firebase/auth';
 
 // Firebase configuration
 const firebaseConfig = {
@@ -13,16 +13,18 @@ const firebaseConfig = {
     measurementId: "G-BYDGD4MD6S"
 };
 
-// Initialize Firebase app
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
+
+// Firestore Database
 const db = getFirestore(app);
 
-
-// Get Auth instance
+// Authentication
 const auth = getAuth(app);
 
-// Create an instance of GoogleAuthProvider
+// Google Authentication Provider
 const provider = new GoogleAuthProvider();
 
-// Export auth and provider
-export { auth, provider, RecaptchaVerifier, signInWithPhoneNumber, db, collection, addDoc };
+// RecaptchaVerifier and Phone Auth
+// Note: You don't need to configure RecaptchaVerifier here unless you're doing global setup.
+export { auth, provider, db, collection, addDoc };

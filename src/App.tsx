@@ -19,6 +19,7 @@ import Certificate from './components/certificate/Certificate';
 import Form from './components/course/form';
 import SavedCourses from './components/Userprofile/savedcourses';
 import ScrollToTop from './components/scrolltotop';
+import Registration from './components/login/Registration';
 
 const App: React.FC = () => {
   return (
@@ -50,6 +51,7 @@ const App: React.FC = () => {
           <Route path="/certificate" element={<Certificate />} />
           <Route path="/course" element={<Course />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Registration />} />
           <Route path="/user-profile" element={<UserProfile />} />
           <Route path="/explore" element={<Explore />} />
           <Route path="/team" element={<Team />} />
