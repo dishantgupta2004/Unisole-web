@@ -57,7 +57,7 @@ const Donate: React.FC = () => {
         }
 
         const options = {
-            key: 'rzp_live_7nFwNEzqaAFxLp',
+            key: 'rzp_live_RB4uyUEo12arAW',
             amount: amount * 100,
             currency: 'INR',
             name: 'Donation',
