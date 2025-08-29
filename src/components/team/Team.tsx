@@ -17,13 +17,6 @@ const teamMembers = [
         instagram: 'https://www.instagram.com/ajay.mokta?igsh=bGZmc3RzanFram9s'
     },
     {
-        name: 'Shabd Patel',
-        role: 'CTO & Lead Developer',
-        image: '/photo2.jpg',
-        linkedin: 'https://www.linkedin.com/in/shabdpatel8757/',
-        instagram: 'https://instagram.com/shabd_patel_?igshid=ZDdkNTZiNTM='
-    },
-    {
         name: 'Kushal Kesharwani',
         role: 'ML Engineer',
         image: '/photo6.jpg',
@@ -32,39 +25,11 @@ const teamMembers = [
     },
     {
         name: 'Dishant Gupta',
-        role: 'Chief Engineer',
+        role: 'Research Associate & Co-Founder',
         image: '/photo8.jpeg',
         linkedin: 'https://www.linkedin.com/in/dishant-gupta-44067926a/',
         instagram: 'https://www.instagram.com/dishantgupta20?utm_source=qr&igsh=dHcxMHhxYTJqODU0'
-    },
-    {
-        name: 'Khushi',
-        role: 'Client Executive',
-        image: '/photo9.jpeg',
-        linkedin: '#',
-        instagram: 'https://www.instagram.com/khushi_yadav.19?igsh=MTEzaDlza2JlaTY1Nw=='
-    },
-    {
-        name: 'Ayush Sharma',
-        role: 'Advisor',
-        image: '/photo7.jpeg',
-        linkedin: 'https://www.linkedin.com/in/ayush-kumar-sharma-337b0631b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
-        instagram: 'https://www.instagram.com/_ayu.sh1?igsh=MXEzOTNyNTFpY2xxMg=='
-    },
-    {
-        name: 'Shweta Sharma',
-        role: 'Junior Manager',
-        image: '/ph2.jpeg',
-        linkedin: 'https://www.linkedin.com/in/shweta-sharma-35ba61325?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
-        instagram: '#'
-    },
-    {
-        name: 'Om Parmar',
-        role: 'Junior Manager',
-        image: '/ph3.jpeg',
-        linkedin: '#',
-        instagram: '#'
-    },
+    }
 ];
 
 const Team = () => {
