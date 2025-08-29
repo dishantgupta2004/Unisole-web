@@ -48,7 +48,7 @@ const Form: React.FC = () => {
         }
 
         const options = {
-            key: 'rzp_live_7nFwNEzqaAFxLp', // Replace with your Razorpay key
+            key: 'rzp_live_RB4uyUEo12arAW', // Replace with your Razorpay key
             amount: 299 * 100, // Amount in paise (299 INR)
             currency: 'INR',
             name: 'Enroll in Python and Generative AI',
